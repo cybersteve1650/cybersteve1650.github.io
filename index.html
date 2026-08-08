@@ -7,29 +7,31 @@
 <meta name="description" content="Six legal ways to reduce your tax and grow your assets in Japan.">
 
 <!--
-==========================================================================
   HOW TO EDIT THIS FILE
-==========================================================================
+
   1. Open it in any plain text editor (Notepad, TextEdit, VS Code).
-  2. Change the words between the tags. Example:
-        <h3>Property investment</h3>
-     Edit only "Property investment". Leave <h3> and </h3> alone.
+  2. Change the words between the tags. If you see a heading written as
+     h3 Property investment /h3, edit only the words in the middle and
+     leave the tags on either side alone.
   3. To change a colour or a font size, look in the STYLE block below.
      Every colour is set once, at the top, under ":root".
   4. Save the file, then open it in your browser to check it.
-  5. To add a new lever, copy one whole block that starts with
-     <!-- LEVER 0x --> and ends with </section>, then edit the copy.
+  5. To add a new lever, copy one whole block that starts with a comment
+     naming the lever and ends with the closing section tag, then edit
+     the copy.
 
   THE CALCULATOR
-  Numbers that react to the tax band buttons are marked like this:
-        <span data-deduction="900000">...</span>
-  The number inside data-deduction is the size of the deduction in yen.
-  The page multiplies it by the tax rate and writes the answer for you.
+  Numbers that react to the tax band buttons carry an attribute called
+  data-deduction. The value is the size of the deduction in yen. The
+  page multiplies it by the tax rate and writes the answer for you.
   Change 900000 to any figure and the maths updates by itself.
 
   UPDATING THE VERSION
   Search for "LAST UPDATED" below and change the date in two places.
-==========================================================================
+
+  ONE WARNING
+  Never type the two characters that close an HTML comment inside this
+  guide. It ends the comment early and the rest spills onto the page.
 -->
 
 <style>
@@ -56,10 +58,12 @@
 /* ===================== BASE ===================== */
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+html,body{overflow-x:hidden; max-width:100%}
 body{
   margin:0; font-family:var(--font); color:var(--navy);
   background:var(--white); font-size:17px; line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word; word-wrap:break-word;
 }
 img{max-width:100%}
 a{color:var(--red)}
