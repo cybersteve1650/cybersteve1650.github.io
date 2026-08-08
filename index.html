@@ -10,9 +10,8 @@
   HOW TO EDIT THIS FILE
 
   1. Open it in any plain text editor (Notepad, TextEdit, VS Code).
-  2. Change the words between the tags. If you see a heading written as
-     h3 Property investment /h3, edit only the words in the middle and
-     leave the tags on either side alone.
+  2. Change the words between the tags. Edit only the words in the
+     middle and leave the tags on either side alone.
   3. To change a colour or a font size, look in the STYLE block below.
      Every colour is set once, at the top, under ":root".
   4. Save the file, then open it in your browser to check it.
@@ -24,10 +23,15 @@
   Numbers that react to the tax band buttons carry an attribute called
   data-deduction. The value is the size of the deduction in yen. The
   page multiplies it by the tax rate and writes the answer for you.
-  Change 900000 to any figure and the maths updates by itself.
+  Change the number and the maths updates by itself.
 
   UPDATING THE VERSION
-  Search for "LAST UPDATED" below and change the date in two places.
+  Search for "LAST UPDATED" and change the date in two places.
+
+  REMOVING A LINK
+  Every partner link sits inside an "a" tag. Delete the whole line to
+  remove it. Search for "PRIVATE LINK" to find the ones that point at
+  Google Drive files.
 
   ONE WARNING
   Never type the two characters that close an HTML comment inside this
@@ -37,21 +41,20 @@
 <style>
 /* ===================== COLOURS AND FONTS (edit here) ===================== */
 :root{
-  --red:#CC0033;          /* Talent Red   */
-  --navy:#27323A;         /* Midnight Sky */
-  --white:#FFFFFF;        /* Pacific White*/
-  --sand:#E1DDD7;         /* Sandstone    */
-  --concrete:#DDE3E8;     /* Concrete     */
+  --red:#CC0033;          /* Talent Red    */
+  --navy:#27323A;         /* Midnight Sky  */
+  --white:#FFFFFF;        /* Pacific White */
+  --sand:#E1DDD7;         /* Sandstone     */
+  --concrete:#DDE3E8;     /* Concrete      */
   --agave:#0B6E76;
   --midagave:#033941;
-  --marigold:#EBA439;
-  --monday:#005DA0;
-  --ocean:#4AE8D8;
+  --monday:#005DA0;       /* used for notes and warnings */
+  --ocean:#4AE8D8;        /* accent on dark backgrounds  */
   --grey:#5F6B73;
   --lightgrey:#8A949B;
 
   --font: "Noto Sans", Arial, Helvetica, sans-serif;
-  --pad: 20px;            /* side padding on phones */
+  --pad: 20px;
   --radius: 14px;
 }
 
@@ -66,7 +69,6 @@ body{
   overflow-wrap:break-word; word-wrap:break-word;
 }
 img{max-width:100%}
-a{color:var(--red)}
 .wrap{max-width:760px; margin:0 auto; padding:0 var(--pad)}
 .eyebrow{
   font-size:12px; font-weight:700; letter-spacing:.14em;
@@ -75,10 +77,20 @@ a{color:var(--red)}
 h1{font-size:38px; line-height:1.12; font-weight:700; margin:0 0 14px; letter-spacing:-.01em}
 h2{font-size:27px; line-height:1.2; font-weight:700; margin:0 0 14px; letter-spacing:-.01em}
 h3{font-size:18px; font-weight:700; margin:0 0 6px}
+h4{font-size:15px; font-weight:700; margin:26px 0 10px; text-transform:uppercase; letter-spacing:.08em; color:var(--grey)}
 p{margin:0 0 16px}
 .lede{font-size:19px; color:var(--grey)}
 .small{font-size:14px; color:var(--grey)}
 .tiny{font-size:13px; color:var(--lightgrey)}
+
+/* ===================== LINKS ===================== */
+a{color:var(--red); text-decoration:underline; text-underline-offset:2px}
+a:hover{text-decoration:none}
+a:focus-visible{outline:3px solid var(--monday); outline-offset:2px}
+section.dark a{color:var(--ocean)}
+section.dark h4{color:var(--ocean)}
+.card.navy a,.card.red a,.card.deep a{color:var(--ocean)}
+.card.note a{color:var(--white)}
 
 /* ===================== HERO ===================== */
 .hero{background:var(--navy); color:var(--white); padding:64px 0 44px; position:relative; overflow:hidden}
@@ -93,10 +105,7 @@ p{margin:0 0 16px}
 .hero .wrap{position:relative; z-index:1}
 
 /* ===================== STICKY NAV ===================== */
-nav{
-  position:sticky; top:0; z-index:50; background:var(--white);
-  border-bottom:1px solid var(--concrete);
-}
+nav{position:sticky; top:0; z-index:50; background:var(--white); border-bottom:1px solid var(--concrete)}
 nav ul{
   display:flex; gap:8px; list-style:none; margin:0; padding:10px var(--pad);
   overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
@@ -107,13 +116,13 @@ nav a{
   font-size:13px; font-weight:700; color:var(--navy);
   background:var(--concrete); padding:7px 13px; border-radius:99px;
 }
-nav a:hover{background:var(--sand)}
+nav a:hover{background:var(--sand); text-decoration:none}
 
 /* ===================== SECTIONS ===================== */
 section{padding:44px 0; border-top:1px solid var(--concrete)}
 section:first-of-type{border-top:0}
 section.dark{background:var(--navy); color:var(--white); border-top:0}
-section.dark h2{color:var(--white)}
+section.dark h2,section.dark h3{color:var(--white)}
 section.dark .eyebrow{color:var(--ocean)}
 section.dark p{color:var(--sand)}
 section.tint{background:var(--sand); border-top:0}
@@ -125,20 +134,38 @@ section.tint{background:var(--sand); border-top:0}
 .card.navy h3{color:var(--white)}
 .card.navy p{color:var(--sand)}
 .card.red{background:var(--red); color:var(--white)}
-.card.red h3, .card.red p{color:var(--white)}
+.card.red h3,.card.red p{color:var(--white)}
 .card.deep{background:var(--midagave); color:var(--white)}
 .card.deep h3{color:var(--white)}
 .card.deep p{color:var(--sand)}
-.card.gold{background:var(--marigold); color:var(--navy)}
+.card.note{background:var(--monday); color:var(--white)}
+.card.note h3,.card.note p{color:var(--white)}
 .card p:last-child{margin-bottom:0}
-
 .grid{display:grid; gap:14px}
 @media(min-width:640px){ .grid.two{grid-template-columns:1fr 1fr} }
+
+/* ===================== PARTNER CARD ===================== */
+.partner{background:var(--white); border:2px solid var(--concrete); border-radius:var(--radius); padding:22px; margin:0 0 14px}
+section.dark .partner,section.tint .partner{border-color:transparent}
+section.dark .partner{background:var(--midagave); color:var(--white)}
+section.dark .partner h3{color:var(--white)}
+section.dark .partner p{color:var(--sand)}
+.partner .role{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red); margin:0 0 4px}
+section.dark .partner .role{color:var(--ocean)}
+.btn{
+  display:inline-block; margin:4px 8px 4px 0; padding:11px 18px;
+  background:var(--red); color:var(--white); font-size:15px; font-weight:700;
+  border-radius:99px; text-decoration:none;
+}
+.btn:hover{background:var(--navy); text-decoration:none}
+.btn.alt{background:var(--navy)}
+.btn.alt:hover{background:var(--red)}
+section.dark .btn{color:var(--white)}
 
 /* ===================== BIG NUMBERS ===================== */
 .figure{font-size:40px; font-weight:700; line-height:1.05; letter-spacing:-.02em; display:block}
 .figure.sm{font-size:29px}
-.figure-label{font-size:14px; color:var(--grey); margin-top:4px}
+.figure-label{font-size:14px; color:var(--grey); margin-top:4px; display:block}
 .card.navy .figure-label,.card.red .figure-label,.card.deep .figure-label{color:var(--sand)}
 
 /* ===================== CALCULATOR ===================== */
@@ -156,35 +183,19 @@ section.tint{background:var(--sand); border-top:0}
 .calc-out{background:var(--midagave); border-radius:10px; padding:18px}
 .calc-out .figure{color:var(--white)}
 .calc-out .figure-label{color:var(--sand)}
-.rate-pill{
-  display:inline-block; background:var(--ocean); color:var(--navy);
-  font-size:13px; font-weight:700; padding:3px 10px; border-radius:99px;
-}
-
-/* value line inside lever cards */
-.value{
-  margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.12);
-  font-size:15px;
-}
+.rate-pill{display:inline-block; background:var(--ocean); color:var(--navy); font-size:13px; font-weight:700; padding:3px 10px; border-radius:99px}
+.value{margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.12); font-size:15px}
 .card.navy .value,.card.deep .value,.card.red .value{border-top-color:rgba(255,255,255,.2)}
 .value b{font-size:21px; display:block; line-height:1.3}
 
 /* ===================== LISTS ===================== */
 ul.plain{list-style:none; margin:0 0 16px; padding:0}
-ul.plain li{
-  position:relative; padding:0 0 0 26px; margin:0 0 10px;
-}
-ul.plain li:before{
-  content:""; position:absolute; left:0; top:9px; width:10px; height:10px;
-  border-radius:3px; background:var(--red);
-}
+ul.plain li{position:relative; padding:0 0 0 26px; margin:0 0 10px}
+ul.plain li:before{content:""; position:absolute; left:0; top:9px; width:10px; height:10px; border-radius:3px; background:var(--red)}
 section.dark ul.plain li:before{background:var(--ocean)}
 
-/* numbered steps */
 ol.steps{list-style:none; counter-reset:s; margin:0; padding:0}
-ol.steps li{
-  counter-increment:s; position:relative; padding:0 0 0 46px; margin:0 0 20px;
-}
+ol.steps li{counter-increment:s; position:relative; padding:0 0 0 46px; margin:0 0 20px}
 ol.steps li:before{
   content:counter(s); position:absolute; left:0; top:0;
   width:32px; height:32px; border-radius:9px; background:var(--navy);
@@ -197,26 +208,24 @@ ol.steps span{font-size:15px; color:var(--grey)}
 section.dark ol.steps span{color:var(--sand)}
 
 /* ===================== SUMMARY ROWS ===================== */
-.row{
-  display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--concrete);
-}
+.row{display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--concrete)}
 .row:last-child{border-bottom:0}
-.tag{
-  flex:0 0 34px; height:34px; border-radius:9px; color:var(--white);
-  font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;
-}
+.tag{flex:0 0 34px; height:34px; border-radius:9px; color:var(--white); font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center}
+.tag.light{color:var(--navy)}
 .row b{display:block}
 .row span{font-size:15px; color:var(--grey)}
 .row em{display:block; font-style:normal; font-size:14px; color:var(--lightgrey); margin-top:3px}
 
 /* ===================== PRICE LIST ===================== */
-.price{display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid rgba(255,255,255,.15)}
+.price{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.15)}
 .price:last-child{border-bottom:0}
-.price span:last-child{font-weight:700; color:var(--marigold); white-space:nowrap}
+.price a{color:var(--white)}
+.price .amt{font-weight:700; color:var(--ocean); white-space:nowrap}
 
 /* ===================== FOOTER ===================== */
 footer{background:var(--navy); color:var(--lightgrey); padding:36px 0 44px; font-size:14px}
 footer b{color:var(--white)}
+footer a{color:var(--ocean)}
 
 /* ===================== ACCESSIBILITY AND PRINT ===================== */
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
@@ -225,8 +234,10 @@ footer b{color:var(--white)}
   body{font-size:12pt}
   section{page-break-inside:avoid; border-top:1px solid #ccc}
   .hero,section.dark,footer{background:#fff !important; color:#000 !important}
-  .hero h1,section.dark h2{color:#000 !important}
+  .hero h1,section.dark h2,section.dark h3{color:#000 !important}
   .hero p,section.dark p,footer{color:#333 !important}
+  a{color:#000 !important}
+  a:after{content:" (" attr(href) ")"; font-size:9pt; color:#666}
 }
 </style>
 </head>
@@ -240,9 +251,9 @@ footer b{color:var(--white)}
   <div class="wrap">
     <p class="eyebrow">A practical guide for high earners in Japan</p>
     <h1>Building wealth in Japan</h1>
-    <p class="lede" style="color:var(--sand)">Six legal ways to reduce your tax and grow your assets.</p>
+    <p class="lede" style="color:var(--sand)">Six legal ways to reduce your tax and grow your assets, with the people and tools I use myself.</p>
     <!-- LAST UPDATED (1 of 2) -->
-    <p class="byline"><b>Steven Li</b> &nbsp;·&nbsp; Last updated August 2026</p>
+    <p class="byline"><b>Steven Li</b> &nbsp;&middot;&nbsp; Last updated August 2026</p>
   </div>
 </header>
 
@@ -268,7 +279,6 @@ footer b{color:var(--white)}
     <p>The top national income tax rate is 45%. Resident tax adds a flat 10% on top. At the highest band you keep only 45 yen of every extra 100 yen you earn.</p>
     <p>So the fastest way to build wealth here is not to earn more. It is to lower the income that gets taxed.</p>
 
-    <!-- Calculator. Tap a band to change every figure on the page. -->
     <div class="calc">
       <h3>Pick your tax band</h3>
       <p class="hint">Every figure on this page will update to match.</p>
@@ -289,7 +299,7 @@ footer b{color:var(--white)}
 <!-- ============================ LEVER 01: PROPERTY ============================ -->
 <section id="property">
   <div class="wrap">
-    <p class="eyebrow">Lever 01 · Property investment</p>
+    <p class="eyebrow">Lever 01 &middot; Property investment</p>
     <h2>Build equity and lower your tax</h2>
     <p>A rental property in Japan usually runs at a paper loss in the early years, mostly because of depreciation. That loss comes off your salary income.</p>
 
@@ -302,36 +312,52 @@ footer b{color:var(--white)}
       </div>
     </div>
 
-    <h3>What to buy</h3>
+    <!-- PARTNER: Rachel Li -->
+    <div class="partner">
+      <p class="role">The agent I use</p>
+      <h3>Rachel Li</h3>
+      <p class="small">She sources off market deals, supports loan applications, and gives end to end support in English, Japanese or Chinese.</p>
+      <p class="small"><b>Book a time through her Calendly and mention my name to be prioritised.</b></p>
+      <a class="btn" href="https://calendly.com/plrachel/meeting-rachel-japanese-real-estate-consultation" target="_blank" rel="noopener">Book a call with Rachel</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/rachel-post-lintel" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- PRIVATE LINK. Delete this line to hide the client presentation. -->
+      <p class="small" style="margin-top:14px"><a href="https://drive.google.com/file/d/1sBuHr8KBKUZK-F9-WUcCaxxouia6j6CG/view" target="_blank" rel="noopener">Client presentation v2.5</a></p>
+    </div>
+
+    <h4>What she looks for</h4>
     <ul class="plain">
       <li>Units under 30 square metres</li>
-      <li>Tokyo and Osaka only</li>
-      <li>Areas with strong tenant demand</li>
-      <li>Within a 10 minute walk of a station</li>
+      <li>Tokyo and Osaka</li>
+      <li>High demand areas</li>
+      <li>Within a 10 minute walk of a train station</li>
+      <li>Typical price range ¥18M to ¥40M</li>
     </ul>
-    <p class="small">Typical price range is ¥18M to ¥40M. Small units let you own more properties and spread your risk across buildings. Many good deals in Tokyo never reach a public listing.</p>
 
+    <h4>Financing</h4>
     <div class="grid two">
       <div class="card sand">
-        <h3>With permanent residence</h3>
-        <span class="figure sm" style="color:var(--agave)">100% loan</span>
-        <p class="small" style="margin-top:6px">Banks lend the full purchase price. Cash needed up front is often under ¥1,000,000.</p>
+        <h3>Permanent resident or Japanese citizen</h3>
+        <span class="figure sm" style="color:var(--agave)">up to 100%</span>
+        <p class="small" style="margin-top:6px">Cash needed up front is often under ¥1,000,000.</p>
       </div>
       <div class="card sand">
-        <h3>Without it</h3>
-        <span class="figure sm">70% loan</span>
-        <p class="small" style="margin-top:6px">You fund the remaining 30% yourself, and fewer banks will consider you.</p>
+        <h3>Without permanent residence</h3>
+        <span class="figure sm">up to 70%</span>
+        <p class="small" style="margin-top:6px">You fund the rest yourself, and fewer banks will consider you.</p>
       </div>
     </div>
 
-    <h3 style="margin-top:24px">What you can deduct</h3>
+    <h4>Common tax deductions</h4>
     <ul class="plain">
       <li>Depreciation and loan interest</li>
-      <li>Management fees, leasing fees and agent fees</li>
-      <li>Repairs, upkeep and insurance</li>
-      <li>Accountant and legal costs</li>
-      <li>Utilities you pay, and travel to the property</li>
-      <li>Loan and bank fees</li>
+      <li>Property management fees</li>
+      <li>Repair and maintenance costs</li>
+      <li>Insurance premiums</li>
+      <li>Leasing and agent fees</li>
+      <li>Professional fees for tax accountant and legal</li>
+      <li>Utilities paid by the owner</li>
+      <li>Travel and transport related to the property</li>
+      <li>Loan and banking fees</li>
     </ul>
   </div>
 </section>
@@ -339,7 +365,7 @@ footer b{color:var(--white)}
 <!-- ============================ LEVER 02: ANGEL FUND ============================ -->
 <section id="angel" class="dark">
   <div class="wrap">
-    <p class="eyebrow">Lever 02 · Angel fund investment</p>
+    <p class="eyebrow">Lever 02 &middot; Angel fund investment</p>
     <h2>Back Japanese founders and claim the deduction</h2>
     <p>Japan's Ministry of Economy, Trade and Industry runs an angel investor scheme. Money you put into qualifying early stage companies can be deducted from your income.</p>
 
@@ -352,22 +378,26 @@ footer b{color:var(--white)}
       </div>
     </div>
 
-    <div class="grid two">
-      <div class="card deep"><h3>¥5,000,000</h3><p class="small" style="color:var(--sand)">Minimum investment</p></div>
-      <div class="card deep"><h3>¥10,500,000</h3><p class="small" style="color:var(--sand)">Suggested maximum</p></div>
+    <!-- PARTNER: Shizen -->
+    <div class="partner">
+      <p class="role">The fund I invest in</p>
+      <h3>Shizen.vc</h3>
+      <p class="small">Invests in eight to twelve angel companies a year. Minimum investment ¥5,000,000. Maximum I would recommend is around ¥10,500,000.</p>
+      <a class="btn" href="https://shizen.vc" target="_blank" rel="noopener">Visit Shizen.vc</a>
+      <p class="small" style="margin-top:14px"><b>Speak to me for an introduction to the co-founders.</b></p>
     </div>
 
-    <h3 style="color:#fff; margin-top:24px">Why I chose the fund I use</h3>
+    <h4>What I like</h4>
     <ul class="plain">
-      <li>The partners have built and sold their own companies</li>
-      <li>Careful attention to protecting shareholder capital</li>
-      <li>Access to the investor community and its events</li>
-      <li>Investors help review new deals and support the portfolio</li>
-      <li>Eight to twelve companies backed each year</li>
+      <li>Founders with a track record of building and exiting their own companies</li>
+      <li>Attention to preserving shareholder capital</li>
+      <li>Access to the Limited Partner community and its events</li>
+      <li>Founders use the expertise of the LPs to evaluate new companies and support existing ones</li>
     </ul>
 
-    <div class="card gold">
-      <p><b>Read the fees before you commit.</b> Expect 2% to 3% each year, often paid up front for ten years. The tax deduction does not cover the fees.</p>
+    <div class="card note">
+      <h3>Read the fees before you commit</h3>
+      <p class="small" style="color:#fff">2% to 3% per year, paid up front for ten years. The percentage depends on the amount you invest and the month you invest. The tax deduction does not apply to fees paid into the fund.</p>
     </div>
     <p class="tiny">This is a long hold. Treat it as money you will not see again for several years.</p>
   </div>
@@ -376,112 +406,138 @@ footer b{color:var(--white)}
 <!-- ============================ LEVER 03: DEPENDENTS ============================ -->
 <section id="dependents">
   <div class="wrap">
-    <p class="eyebrow">Lever 03 · Dependent deductions</p>
+    <p class="eyebrow">Lever 03 &middot; Dependent deductions</p>
     <h2>Support family, lower your tax</h2>
     <p>If you send money to family who depend on you, in Japan or overseas, you can claim a deduction for each person.</p>
 
     <div class="grid two">
       <div class="card navy">
         <span class="figure sm">¥380,000</span>
-        <span class="figure-label">General dependent. Age 16 to 18, or 23 to 69</span>
+        <span class="figure-label">General dependent, age 16 to 18 or 23 to 69</span>
         <div class="value">You keep <b data-deduction="380000">¥190,000</b></div>
       </div>
       <div class="card red">
         <span class="figure sm">¥480,000</span>
-        <span class="figure-label">Elderly dependent. Age 70 and above</span>
+        <span class="figure-label">Elderly dependent, age 70 and above</span>
         <div class="value">You keep <b data-deduction="480000">¥240,000</b></div>
       </div>
     </div>
     <p class="small">The deduction is claimed per person, so several family members can qualify.</p>
 
-    <h3 style="margin-top:24px">Four rules that decide if your claim is accepted</h3>
+    <h4>Four rules that decide if your claim is accepted</h4>
     <ol class="steps">
-      <li><b>Prove the relationship</b><span>A birth certificate translated into Japanese by an official translator. Around ¥3,000 plus postage, and about two days.</span></li>
-      <li><b>Send the money inside one month</b><span>One transfer window keeps all the evidence on a single bank statement.</span></li>
-      <li><b>Keep proof from your side</b><span>Statements must show the money leaving your own account.</span></li>
-      <li><b>Submit at year end</b><span>Give the evidence to your employer during the year end tax adjustment.</span></li>
+      <li><b>Prove the relationship</b><span>A document such as a birth certificate, translated officially into Japanese.</span></li>
+      <li><b>Send the full amount inside one month</b><span>Send to all dependents in the same month so everything sits on one statement.</span></li>
+      <li><b>Keep bank statement evidence from your side only</b><span>Statements must show the money leaving your own account.</span></li>
+      <li><b>Submit at the year end tax adjustment</b><span>Give the evidence to your employer during the YETA.</span></li>
     </ol>
+
+    <!-- PARTNER: Sakura translation -->
+    <div class="partner">
+      <p class="role">The translator I use</p>
+      <h3>Sakura Immigration Lawyer's Translation</h3>
+      <p class="small">¥3,000 per birth certificate translation plus ¥430 postage. Payment by bank transfer. Translated documents arrived in my mailbox two days after payment.</p>
+      <a class="btn" href="https://en.wwtransjapan.com/" target="_blank" rel="noopener">Visit the translator</a>
+    </div>
   </div>
 </section>
 
 <!-- ============================ LEVER 04: NISA ============================ -->
 <section id="nisa" class="tint">
   <div class="wrap">
-    <p class="eyebrow">Lever 04 · NISA</p>
+    <p class="eyebrow">Lever 04 &middot; NISA</p>
     <h2>Tax free investing for life</h2>
-    <p>Normally you pay 20.315% on investment gains and dividends in Japan. Inside a NISA account you pay nothing.</p>
+    <p>Normally dividends and capital gains are taxed at 20.315%, made up of 15% income tax, 5% residence tax and 0.315% special reconstruction tax. Inside a NISA account you pay none of it.</p>
 
     <div class="grid two">
-      <div class="card"><span class="figure sm">¥3.6M</span><span class="figure-label">Contribution limit each year</span></div>
+      <div class="card"><span class="figure sm">¥3.6M</span><span class="figure-label">Each year, split into ¥1.2M stable and ¥2.4M growth</span></div>
       <div class="card"><span class="figure sm">¥18M</span><span class="figure-label">Lifetime contribution limit</span></div>
     </div>
 
-    <p class="small">The yearly limit splits into ¥1.2M for stable funds and ¥2.4M for growth funds. Open an account with Rakuten, SBI or Monex. Set a monthly amount and leave it alone.</p>
+    <p class="small">Open an account with Rakuten Securities, SBI or Monex. I use Rakuten Securities. A diversified portfolio of stocks and ETFs works well. You can withdraw at any time, but check the reinvestment rules before you do.</p>
 
+    <div class="partner">
+      <p class="role">Worth reading</p>
+      <h3>The RetireJapan NISA guide</h3>
+      <p class="small">The clearest plain English explanation of how the account works.</p>
+      <a class="btn" href="https://www.retirejapan.com/nisa/" target="_blank" rel="noopener">Read the guide</a>
+    </div>
+
+    <h4>My own portfolio</h4>
     <div class="card navy">
-      <h3>My own mix</h3>
-      <p class="small" style="color:var(--sand)">Global stocks 50% · United States stocks 33% · India stocks 17%</p>
+      <p class="small" style="color:var(--sand); margin-bottom:10px"><a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000H1T1" target="_blank" rel="noopener">eMAXIS Slim Global Stocks (All Country)</a> &nbsp;50%, growth</p>
+      <p class="small" style="color:var(--sand); margin-bottom:10px"><a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000GKC6" target="_blank" rel="noopener">eMAXIS Slim US Stocks (S&amp;P 500)</a> &nbsp;33%, tsumitate</p>
+      <p class="small" style="color:var(--sand)"><a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000PCX0" target="_blank" rel="noopener">iFreeNEXT Indian Stock Index</a> &nbsp;17%, growth</p>
     </div>
 
-    <div class="card gold">
-      <p><b>United States taxpayers, take care.</b> NISA only removes Japanese tax. You must still report and pay in the United States.</p>
+    <div class="card note">
+      <h3>United States taxpayers, take care</h3>
+      <p class="small" style="color:#fff">NISA only removes Japanese tax. The United States still taxes the investments, so NISA does not remove your US reporting. Interactive Brokers is the practical choice used by US citizens to streamline reporting, and it covers the growth portion only, up to ¥18M.</p>
+      <a class="btn alt" href="https://www.interactivebrokers.co.jp/en/accounts/nisa-accounts.php" target="_blank" rel="noopener">Interactive Brokers NISA</a>
     </div>
-    <p class="tiny">You can withdraw at any time, but check the rules first. Putting the money back in later has limits.</p>
   </div>
 </section>
 
 <!-- ============================ LEVER 05: FURUSATO NOZEI ============================ -->
 <section id="furusato" class="dark">
   <div class="wrap">
-    <p class="eyebrow">Lever 05 · Furusato nozei</p>
+    <p class="eyebrow">Lever 05 &middot; Furusato nozei</p>
     <h2>Turn tax you already owe into goods you want</h2>
-    <p>You donate to towns around Japan. Almost the whole donation comes back off your resident tax. In return the towns send you gifts. You pay ¥2,000 in total and keep the goods.</p>
+    <p>You donate to local governments around Japan and receive gifts in return, such as wagyu, rice and furniture. Almost the whole donation comes back off your resident tax.</p>
 
     <ol class="steps">
-      <li><b>Work out your limit</b><span>Use an online calculator, after your other deductions are counted.</span></li>
+      <li><b>Work out your limit</b><span>First reduce your income by your other deductions, such as property and dependents. Then use the calculator.</span></li>
       <li><b>Donate before 31 December</b><span>Choose the towns and pick your gifts.</span></li>
-      <li><b>Receive the goods</b><span>Wagyu, rice, fruit, furniture, appliances and shopping vouchers.</span></li>
-      <li><b>Pay less resident tax</b><span>You see the reduction from June the following year.</span></li>
+      <li><b>Receive the goods</b><span>They arrive through the year, direct from the town.</span></li>
+      <li><b>Pay less resident tax</b><span>In June the following year you see the reduction on the small white and green paper, equal to your donation up to your allowance.</span></li>
     </ol>
 
     <div class="card red">
       <span class="figure">¥564,000</span>
       <span class="figure-label">Roughly what you can donate on a ¥20,000,000 salary</span>
-      <p class="small" style="color:#fff; margin-top:12px">Gifts are capped at 30% of the donation value, so about ¥169,200 of goods each year.</p>
+      <p class="small" style="color:#fff; margin-top:12px">The gifts are capped at 30% of the donation value, so about ¥169,200 of free goods each year.</p>
     </div>
 
-    <h3 style="color:#fff">Examples worth having</h3>
-    <div class="price"><span>Tailored suit, Ginza</span><span>¥610,000</span></div>
-    <div class="price"><span>Sofa, 160cm</span><span>¥572,000</span></div>
-    <div class="price"><span>Front loading washing machine, 8kg</span><span>¥421,000</span></div>
-    <div class="price"><span>Cordless vacuum</span><span>¥296,000</span></div>
-    <div class="price"><span>Office chair and mattress options</span><span>from ¥226,000</span></div>
-    <p class="tiny" style="margin-top:14px">Figures are donation amounts, not the retail price of the gift. Some wards also offer shopping vouchers usable at local stores.</p>
+    <p><a href="https://furusato-nouzei.event.rakuten.co.jp/mypage/deductions/" target="_blank" rel="noopener">Rakuten donation limit calculator</a> &nbsp;&middot;&nbsp; <a href="https://event.rakuten.co.jp/furusato/" target="_blank" rel="noopener">Rakuten Furusato Nozei site</a></p>
+
+    <h4>Things I would actually use</h4>
+    <div class="price"><a href="https://item.rakuten.co.jp/f402052-iizuka/10002163/" target="_blank" rel="noopener">Ginza Yamagataya suit</a><span class="amt">¥610,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f402036-kurume/qd027/" target="_blank" rel="noopener">Sofa, 160cm</a><span class="amt">¥572,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f042081-kakuda/aa1040/" target="_blank" rel="noopener">IRIS Ohyama 8kg front washing machine</a><span class="amt">¥421,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f402125-okawa/br347ka-r/" target="_blank" rel="noopener">Coffee table, 120cm</a><span class="amt">¥307,500</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f401005-kitakyushu/250-3747/" target="_blank" rel="noopener">Dyson Pencilvac vacuum</a><span class="amt">¥296,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f202096-ina/260-20/" target="_blank" rel="noopener">Kokuyo Chair Wizard</a><span class="amt">¥270,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f232238-obu/t084-r/" target="_blank" rel="noopener">Airweave futon mattress</a><span class="amt">¥226,000</span></div>
+    <div class="price"><a href="https://www.satofull.jp/products/detail.php?product_id=1173564" target="_blank" rel="noopener">Chiyoda ward PayPay gift voucher</a><span class="amt">¥5,000 to ¥500,000</span></div>
+    <p class="tiny" style="margin-top:14px">Figures are donation amounts, not the retail price of the gift. The Chiyoda voucher works at around <a href="https://paypay.ne.jp/guide/gift-vouchers-local/?local-name=tokyo-chiyoda-city" target="_blank" rel="noopener">1,000 participating stores</a>.</p>
   </div>
 </section>
 
 <!-- ============================ LEVER 06: PERMANENT RESIDENCE ============================ -->
 <section id="pr">
   <div class="wrap">
-    <p class="eyebrow">Lever 06 · Permanent residence</p>
+    <p class="eyebrow">Lever 06 &middot; Permanent residence</p>
     <h2>The step that unlocks everything else</h2>
-    <p>Permanent residence is not a tax lever by itself. It is the thing that makes the property lever work properly, so it is worth starting early.</p>
+    <p>Permanent residence is not a tax lever by itself. It is what makes the property lever work properly, so it is worth starting early.</p>
 
     <div class="grid two">
       <div class="card red"><h3>100% property loans</h3><p class="small">Banks lend the full purchase price, so you need very little cash up front.</p></div>
-      <div class="card"><h3>More banks will talk to you</h3><p class="small">A wider choice of lenders means better rates and better terms.</p></div>
-      <div class="card"><h3>Security if you lose your job</h3><p class="small">Your right to stay in Japan no longer depends on your employer.</p></div>
-      <div class="card"><h3>Simpler paperwork</h3><p class="small">No more visa renewals tied to your job title or your salary.</p></div>
+      <div class="card"><h3>A wider range of banks</h3><p class="small">More lenders will consider you, which means better rates and terms.</p></div>
+      <div class="card"><h3>Security if you lose your job</h3><p class="small">You can remain in Japan. Your status no longer depends on your employer.</p></div>
+      <div class="card"><h3>Check your points first</h3><p class="small">A higher score can shorten the residence period you need before applying.</p></div>
     </div>
 
-    <h3 style="margin-top:24px">What the application looked like for me</h3>
-    <ul class="plain">
-      <li>Lawyer fee of about ¥160,000, quoted in 2025</li>
-      <li>Eighteen months from filing to approval</li>
-      <li>Handled in business English</li>
-      <li>One clear checklist of documents</li>
-    </ul>
-    <p class="small">Check your points score first. A higher score can shorten the residence period you need before you apply.</p>
+    <p><a href="https://japanprcalculator.com/" target="_blank" rel="noopener">Work out your points score</a></p>
+
+    <!-- PARTNER: Yuki Hirose -->
+    <div class="partner">
+      <p class="role">The lawyer who handled my case</p>
+      <h3>Yuki Hirose, immigration lawyer</h3>
+      <p class="small">She speaks business English, gives a clear checklist of requirements, and keeps it simple for people who do not read Japanese. She even sent a paid return envelope for the signed documents. She handles other visa types too.</p>
+      <p class="small">Cost was around ¥160,000 on a 2025 quote. My application took about 18 months to approve.</p>
+      <p class="small"><b>Mention my name for a slight discount.</b></p>
+      <a class="btn" href="https://www.linkedin.com/in/hiroseyuki0528/" target="_blank" rel="noopener">Contact Yuki on LinkedIn</a>
+    </div>
   </div>
 </section>
 
@@ -495,7 +551,7 @@ footer b{color:var(--white)}
     <div class="row"><div class="tag" style="background:var(--agave)">02</div><div><b>Angel fund investment</b><span>Up to ¥8,000,000 deduction</span><em>Fund entry windows during the year</em></div></div>
     <div class="row"><div class="tag" style="background:var(--monday)">03</div><div><b>Dependent deductions</b><span>¥380,000 to ¥480,000 per person</span><em>Send money early. Claim at year end</em></div></div>
     <div class="row"><div class="tag" style="background:var(--midagave)">04</div><div><b>NISA</b><span>No tax on gains, up to ¥18,000,000 invested</span><em>¥3.6M each year. Set it and forget it</em></div></div>
-    <div class="row"><div class="tag" style="background:var(--marigold)">05</div><div><b>Furusato nozei</b><span>About ¥169,200 of goods on a ¥20M salary</span><em>Before 31 December each year</em></div></div>
+    <div class="row"><div class="tag light" style="background:var(--ocean)">05</div><div><b>Furusato nozei</b><span>About ¥169,200 of goods on a ¥20M salary</span><em>Before 31 December each year</em></div></div>
     <div class="row"><div class="tag" style="background:var(--red)">06</div><div><b>Permanent residence</b><span>100% loans and more lenders</span><em>Apply as early as you qualify</em></div></div>
 
     <div class="card navy" style="margin-top:24px">
@@ -504,20 +560,14 @@ footer b{color:var(--white)}
   </div>
 </section>
 
-<!-- ============================ NEXT STEPS ============================ -->
+<!-- ============================ CONCLUSION ============================ -->
 <section class="dark">
   <div class="wrap">
-    <p class="eyebrow">Next steps</p>
-    <h2>Where to start</h2>
-    <p>Ask me and I can introduce you to the people I use myself.</p>
-    <div class="grid two">
-      <div class="card deep"><h3>Property</h3><p class="small" style="color:var(--sand)">An agent who sources deals before they are listed and supports loan applications in English, Japanese and Chinese.</p></div>
-      <div class="card deep"><h3>Angel fund</h3><p class="small" style="color:var(--sand)">An introduction to the co-founders of the fund I invest in.</p></div>
-      <div class="card deep"><h3>Permanent residence</h3><p class="small" style="color:var(--sand)">The immigration lawyer who handled my own case.</p></div>
-      <div class="card deep"><h3>Document translation</h3><p class="small" style="color:var(--sand)">A translator who returns official Japanese documents in about two days.</p></div>
-    </div>
-    <div class="card red" style="margin-top:6px">
-      <p><b>If this guide was useful, tell me which part helped most.</b> Your feedback shapes the next version.</p>
+    <p class="eyebrow">Conclusion</p>
+    <h2>Tell me what helped</h2>
+    <p>If you read this guide to the end, please drop me a note with what you found useful. That feedback is what improves the next version.</p>
+    <div class="card red">
+      <p><b>Steven Li</b></p>
     </div>
   </div>
 </section>
@@ -526,8 +576,8 @@ footer b{color:var(--white)}
 <footer>
   <div class="wrap">
     <!-- LAST UPDATED (2 of 2) -->
-    <p><b>Steven Li</b> · Building wealth in Japan · Last updated August 2026</p>
-    <p>This guide is not financial, tax or legal advice. It does not consider your personal situation. Figures are estimates for illustration and tax rules change. Please check with your own accountant before you act.</p>
+    <p><b>Steven Li</b> &middot; Building wealth in Japan &middot; Last updated August 2026</p>
+    <p>This is not financial advice and does not take into account your personal circumstances. Figures are estimates for illustration and tax rules change. Please check with your accountant.</p>
   </div>
 </footer>
 
@@ -535,8 +585,8 @@ footer b{color:var(--white)}
 /* ===================================================================
    CALCULATOR
    Multiplies every data-deduction figure by the selected tax rate.
-   You should not need to touch this. To change the bands, edit the
-   buttons in the HTML above and their data-rate values.
+   To change the bands, edit the buttons in the HTML above and their
+   data-rate values. Nothing else needs to change.
    =================================================================== */
 (function () {
   var buttons = document.querySelectorAll('.bands button');
@@ -550,8 +600,7 @@ footer b{color:var(--white)}
 
   function apply(rate) {
     targets.forEach(function (el) {
-      var base = parseFloat(el.getAttribute('data-deduction'));
-      el.textContent = yen(base * rate);
+      el.textContent = yen(parseFloat(el.getAttribute('data-deduction')) * rate);
     });
     pill.textContent = 'You save ' + Math.round(rate * 100) + '% on every deduction';
   }
