@@ -2,661 +2,907 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>4 step checklist to changing jobs in Japan | Steven Li, Robert Half</title>
-<meta name="description" content="A step by step guide for Japanese speaking cyber security professionals changing jobs in Japan.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building wealth in Japan | 日本での資産形成</title>
+<meta name="description" content="Six legal ways to reduce your tax and grow your assets in Japan.">
+
+<!--
+  HOW TO EDIT THIS FILE
+
+  TWO LANGUAGES
+  Every piece of text appears twice, English first and Japanese second,
+  marked with data-lang="en" and data-lang="ja". They sit next to each
+  other so you can edit both at once. If you change an English line,
+  change the Japanese line directly below it.
+
+  To add a new sentence you must add both versions, otherwise readers
+  in one language will see nothing.
+
+  GENERAL
+  1. Open this file in any plain text editor (Notepad, TextEdit, VS Code).
+  2. Change the words between the tags. Leave the tags themselves alone.
+  3. Colours and fonts are set once, at the top, under ":root".
+  4. Save, then open the file in your browser to check it.
+
+  THE CALCULATOR
+  Numbers that react to the tax band buttons carry an attribute called
+  data-deduction. The value is the deduction in yen. The page multiplies
+  it by the tax rate and writes the answer. Change the number and the
+  maths updates by itself. Money amounts are shown the same way in both
+  languages, so they only need to be written once.
+
+  UPDATING THE VERSION
+  Search for "LAST UPDATED" and change the date in two places.
+
+  REMOVING A LINK
+  Every link sits inside an "a" tag. Delete the whole line to remove it.
+  Search for "PRIVATE LINK" to find the one pointing at Google Drive.
+
+  ONE WARNING
+  Never type the two characters that close an HTML comment inside this
+  guide. It ends the comment early and the rest spills onto the page.
+-->
+
 <style>
+/* ===================== COLOURS AND FONTS (edit here) ===================== */
 :root{
-  --red:#CC0033;
-  --midnight:#27323A;
-  --white:#FFFFFF;
-  --sandstone:#E1DDD7;
-  --concrete:#DDE3E8;
-  --monday:#005DA0;
-  --squircle:28% / 28%;
-  --pad:20px;
+  --red:#CC0033;          /* Talent Red    */
+  --navy:#27323A;         /* Midnight Sky  */
+  --white:#FFFFFF;        /* Pacific White */
+  --sand:#E1DDD7;         /* Sandstone     */
+  --concrete:#DDE3E8;     /* Concrete      */
+  --agave:#0B6E76;
+  --midagave:#033941;
+  --monday:#005DA0;       /* notes and warnings */
+  --ocean:#4AE8D8;        /* accent on dark     */
+  --grey:#5F6B73;
+  --lightgrey:#8A949B;
+
+  --font: "Noto Sans", Arial, Helvetica, sans-serif;
+  --font-ja: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --pad: 20px;
+  --radius: 14px;
 }
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-html{scroll-behavior:smooth;scroll-padding-top:64px;}
+
+/* ===================== LANGUAGE SWITCHING ===================== */
+body.lang-en [data-lang="ja"]{display:none !important}
+body.lang-ja [data-lang="en"]{display:none !important}
+body.lang-ja{font-family:var(--font-ja)}
+body.lang-ja h1,body.lang-ja h2,body.lang-ja h3,body.lang-ja h4{letter-spacing:0}
+body.lang-ja .eyebrow{letter-spacing:.06em}
+
+/* ===================== BASE ===================== */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+html,body{overflow-x:hidden; max-width:100%}
 body{
-  margin:0;
-  font-family:'Noto Sans','Noto Sans JP',Arial,Helvetica,sans-serif;
-  color:var(--midnight);
-  background:var(--white);
-  font-size:16px;
-  line-height:1.55;
+  margin:0; font-family:var(--font); color:var(--navy);
+  background:var(--white); font-size:17px; line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word; word-wrap:break-word;
 }
-.wrap{max-width:640px;margin:0 auto;}
+img{max-width:100%}
+.wrap{max-width:760px; margin:0 auto; padding:0 var(--pad)}
+.eyebrow{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red); margin:0 0 10px}
+h1{font-size:38px; line-height:1.12; font-weight:700; margin:0 0 14px; letter-spacing:-.01em}
+h2{font-size:27px; line-height:1.2; font-weight:700; margin:0 0 14px; letter-spacing:-.01em}
+h3{font-size:18px; font-weight:700; margin:0 0 6px}
+h4{font-size:15px; font-weight:700; margin:26px 0 10px; text-transform:uppercase; letter-spacing:.08em; color:var(--grey)}
+p{margin:0 0 16px}
+.lede{font-size:19px; color:var(--grey)}
+.small{font-size:14px; color:var(--grey)}
+.tiny{font-size:13px; color:var(--lightgrey)}
 
-/* ---------- language switching ---------- */
-body:not(.ja) [lang="ja"]{display:none;}
-body.ja [lang="en"]{display:none;}
-body.ja{line-height:1.75;}
-body.ja .hero h1{line-height:1.3;font-size:29px;letter-spacing:0;}
-body.ja .hero p.lede{max-width:24em;}
-body.ja h2{line-height:1.4;}
+/* ===================== LINKS ===================== */
+a{color:var(--red); text-decoration:underline; text-underline-offset:2px}
+a:hover{text-decoration:none}
+a:focus-visible{outline:3px solid var(--monday); outline-offset:2px}
+section.dark a{color:var(--ocean)}
+section.dark h4{color:var(--ocean)}
+.card.navy a,.card.red a,.card.deep a{color:var(--ocean)}
+.card.note a{color:var(--white)}
 
-/* ---------- header ---------- */
-.brandbar{
-  position:sticky;top:0;z-index:40;
-  background:var(--white);
+/* ===================== HERO ===================== */
+.hero{background:var(--navy); color:var(--white); padding:64px 0 44px; position:relative; overflow:hidden}
+.hero .eyebrow{color:var(--ocean)}
+.hero h1{color:var(--white)}
+.hero p{color:var(--sand)}
+.hero .byline{font-size:15px; color:var(--lightgrey); margin:26px 0 0}
+.hero .byline b{color:var(--white)}
+.blot{position:absolute; border-radius:34px; transform:rotate(20deg); z-index:0}
+.blot-a{width:260px; height:260px; background:var(--midagave); right:-110px; top:-90px}
+.blot-b{width:150px; height:150px; background:var(--red); right:-60px; bottom:-70px}
+.hero .wrap{position:relative; z-index:1}
+
+/* ===================== STICKY NAV + LANGUAGE SWITCH ===================== */
+nav{
+  position:sticky; top:0; z-index:50; background:var(--white);
   border-bottom:1px solid var(--concrete);
 }
-.brandbar-in{
-  max-width:640px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding:10px var(--pad);
+.navinner{
+  max-width:760px; margin:0 auto;
+  display:flex; align-items:center;
 }
-.wordmark{
-  font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--red);
+nav ul{
+  flex:1 1 auto; min-width:0;
+  display:flex; gap:8px; list-style:none; margin:0; padding:10px 8px 10px var(--pad);
+  overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
 }
-.wordmark span{color:var(--midnight);font-weight:400;}
-.langbtn{
-  flex:0 0 auto;
-  display:flex;align-items:center;gap:0;
-  border:1px solid var(--concrete);border-radius:18px;
-  background:var(--white);padding:2px;cursor:pointer;
-  font-family:inherit;
+nav ul::-webkit-scrollbar{display:none}
+nav ul a{
+  display:block; white-space:nowrap; text-decoration:none;
+  font-size:13px; font-weight:700; color:var(--navy);
+  background:var(--concrete); padding:7px 13px; border-radius:99px;
 }
-.langbtn span{
-  display:block;padding:5px 12px;border-radius:16px;
-  font-size:12px;font-weight:700;color:#7A858C;
-  transition:background .18s,color .18s;
+nav ul a:hover{background:var(--sand); text-decoration:none}
+@media(min-width:800px){
+  nav ul{gap:6px}
+  nav ul a{padding:7px 11px}
 }
-.langbtn span.on{background:var(--midnight);color:var(--white);}
+.langswitch{
+  flex:0 0 auto; display:flex; gap:4px; align-items:center;
+  padding:10px var(--pad) 10px 10px; background:var(--white);
+  border-left:1px solid var(--concrete);
+}
+.langswitch button{
+  font-family:var(--font); font-size:13px; font-weight:700; cursor:pointer;
+  color:var(--navy); background:var(--white);
+  border:2px solid var(--concrete); border-radius:99px; padding:5px 11px;
+}
+.langswitch button[aria-pressed="true"]{background:var(--navy); border-color:var(--navy); color:var(--white)}
+.langswitch button:focus-visible{outline:3px solid var(--monday); outline-offset:2px}
 
-/* ---------- hero ---------- */
-.hero{
-  background:var(--midnight);
-  color:var(--white);
-  padding:38px var(--pad) 34px;
-  position:relative;overflow:hidden;
-}
-.hero-in{max-width:640px;margin:0 auto;position:relative;z-index:2;}
-.hero::after{
-  content:"";position:absolute;right:-70px;top:-60px;
-  width:230px;height:230px;border-radius:var(--squircle);
-  border:4px solid rgba(204,0,51,.55);
-  z-index:1;
-}
-.hero::before{
-  content:"";position:absolute;right:60px;bottom:-110px;
-  width:180px;height:180px;border-radius:var(--squircle);
-  background:rgba(225,221,215,.09);
-  z-index:1;
-}
-.eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:.16em;
-  color:var(--red);margin:0 0 12px;
-}
-.hero h1{
-  font-weight:300;font-size:33px;line-height:1.12;
-  margin:0 0 14px;letter-spacing:-.01em;
-}
-.hero h1 b{font-weight:700;}
-.hero p.lede{
-  font-size:17px;line-height:1.45;margin:0 0 22px;
-  color:rgba(255,255,255,.9);max-width:32ch;
-}
-body.ja .hero p.lede{line-height:1.7;}
-.byline{font-size:13px;line-height:1.5;color:rgba(255,255,255,.72);margin:0;}
-.byline b{color:var(--white);font-weight:600;}
+/* ===================== SECTIONS ===================== */
+section{padding:44px 0; border-top:1px solid var(--concrete)}
+section:first-of-type{border-top:0}
+section.dark{background:var(--navy); color:var(--white); border-top:0}
+section.dark h2,section.dark h3{color:var(--white)}
+section.dark .eyebrow{color:var(--ocean)}
+section.dark p{color:var(--sand)}
+section.tint{background:var(--sand); border-top:0}
 
-/* ---------- step nav ---------- */
-.stepnav{
-  background:var(--sandstone);
-  padding:14px var(--pad);
-  position:sticky;top:43px;z-index:30;
-  border-bottom:1px solid rgba(39,50,58,.08);
-}
-.stepnav-in{
-  max-width:640px;margin:0 auto;
-  display:flex;gap:8px;overflow-x:auto;
-  scrollbar-width:none;-ms-overflow-style:none;
-}
-.stepnav-in::-webkit-scrollbar{display:none;}
-.chip{
-  flex:0 0 auto;text-decoration:none;
-  background:var(--white);color:var(--midnight);
-  border:1px solid rgba(39,50,58,.14);
-  border-radius:20px;padding:7px 14px;
-  font-size:13px;font-weight:600;white-space:nowrap;
-  transition:background .18s,color .18s,border-color .18s;
-}
-.chip b{color:var(--red);margin-right:5px;}
-.chip.on{background:var(--midnight);color:var(--white);border-color:var(--midnight);}
-.chip.on b{color:var(--white);}
+/* ===================== CARDS ===================== */
+.card{background:var(--concrete); border-radius:var(--radius); padding:22px; margin:0 0 14px}
+.card.sand{background:var(--sand)}
+.card.navy{background:var(--navy); color:var(--white)}
+.card.navy h3{color:var(--white)}
+.card.navy p{color:var(--sand)}
+.card.red{background:var(--red); color:var(--white)}
+.card.red h3,.card.red p{color:var(--white)}
+.card.deep{background:var(--midagave); color:var(--white)}
+.card.deep h3{color:var(--white)}
+.card.deep p{color:var(--sand)}
+.card.note{background:var(--monday); color:var(--white)}
+.card.note h3,.card.note p{color:var(--white)}
+.card p:last-child{margin-bottom:0}
+.grid{display:grid; gap:14px}
+@media(min-width:640px){ .grid.two{grid-template-columns:1fr 1fr} }
 
-/* ---------- sections ---------- */
-main{padding:0 var(--pad) 120px;}
-section{padding:34px 0 4px;border-bottom:1px solid var(--concrete);}
-section:last-of-type{border-bottom:0;}
-h2{font-size:22px;font-weight:700;line-height:1.25;margin:0 0 14px;}
-h3{font-size:15px;font-weight:700;margin:26px 0 8px;}
-p{margin:0 0 14px;}
-a{color:var(--monday);text-decoration:underline;text-underline-offset:2px;}
+/* ===================== PARTNER CARD ===================== */
+.partner{background:var(--white); border:2px solid var(--concrete); border-radius:var(--radius); padding:22px; margin:0 0 14px}
+section.dark .partner{background:var(--midagave); border-color:transparent; color:var(--white)}
+section.dark .partner h3{color:var(--white)}
+section.dark .partner p{color:var(--sand)}
+section.tint .partner{border-color:transparent}
+.partner .role{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red); margin:0 0 4px}
+section.dark .partner .role{color:var(--ocean)}
+.btn{
+  display:inline-block; margin:4px 8px 4px 0; padding:11px 18px;
+  background:var(--red); color:var(--white); font-size:15px; font-weight:700;
+  border-radius:99px; text-decoration:none;
+}
+.btn:hover{background:var(--navy); text-decoration:none}
+.btn.alt{background:var(--navy)}
+.btn.alt:hover{background:var(--red)}
+section.dark .btn{color:var(--white)}
 
-.stephead{display:flex;align-items:flex-start;gap:14px;margin:0 0 18px;}
-.numsq{
-  flex:0 0 auto;width:46px;height:46px;
-  border-radius:var(--squircle);
-  background:var(--red);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  font-size:21px;font-weight:700;
-}
-.stephead h2{margin:8px 0 0;}
+/* ===================== BIG NUMBERS ===================== */
+.figure{font-size:40px; font-weight:700; line-height:1.05; letter-spacing:-.02em; display:block}
+.figure.sm{font-size:29px}
+.figure-label{font-size:14px; color:var(--grey); margin-top:4px; display:block}
+.card.navy .figure-label,.card.red .figure-label,.card.deep .figure-label{color:var(--sand)}
 
-ul{margin:0 0 16px;padding-left:0;list-style:none;}
-ul li{
-  position:relative;padding-left:20px;margin-bottom:11px;
+/* ===================== CALCULATOR ===================== */
+.calc{background:var(--navy); border-radius:var(--radius); padding:22px; color:var(--white)}
+.calc h3{color:var(--white); margin-bottom:4px}
+.calc .hint{font-size:14px; color:var(--lightgrey); margin:0 0 14px}
+.bands{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px}
+.bands button{
+  font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;
+  color:var(--white); background:var(--midagave);
+  border:2px solid var(--midagave); border-radius:99px; padding:9px 15px;
 }
-ul li::before{
-  content:"";position:absolute;left:0;top:9px;
-  width:7px;height:7px;border-radius:2px;
-  background:var(--red);
-}
+.bands button[aria-pressed="true"]{background:var(--red); border-color:var(--red)}
+.bands button:focus-visible{outline:3px solid var(--ocean); outline-offset:2px}
+.calc-out{background:var(--midagave); border-radius:10px; padding:18px}
+.calc-out .figure{color:var(--white)}
+.calc-out .figure-label{color:var(--sand)}
+.rate-pill{display:inline-block; background:var(--ocean); color:var(--navy); font-size:13px; font-weight:700; padding:3px 10px; border-radius:99px}
+.value{margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.12); font-size:15px}
+.card.navy .value,.card.deep .value,.card.red .value{border-top-color:rgba(255,255,255,.2)}
+.value b{font-size:21px; display:block; line-height:1.3}
 
-/* ---------- timeline ---------- */
-.timeline{margin:18px 0 8px;}
-.trow{
-  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-  padding:13px 14px;border:1px solid var(--concrete);border-bottom:0;
-  font-size:15px;
-}
-.trow:last-child{border-bottom:1px solid var(--concrete);}
-.trow:nth-child(even){background:var(--sandstone);}
-.trow.total{background:var(--midnight);color:var(--white);font-weight:700;border-color:var(--midnight);}
-.trow .dur{flex:0 0 auto;font-weight:600;white-space:nowrap;}
+/* ===================== LISTS ===================== */
+ul.plain{list-style:none; margin:0 0 16px; padding:0}
+ul.plain li{position:relative; padding:0 0 0 26px; margin:0 0 10px}
+ul.plain li:before{content:""; position:absolute; left:0; top:9px; width:10px; height:10px; border-radius:3px; background:var(--red)}
+section.dark ul.plain li:before{background:var(--ocean)}
 
-/* ---------- checkable items ---------- */
-.check{
-  display:flex;gap:12px;align-items:flex-start;
-  padding:12px 14px;margin-bottom:8px;
-  border:1px solid var(--concrete);
-  border-radius:10px;background:var(--white);
-  cursor:pointer;user-select:none;
-  transition:background .16s,border-color .16s;
+ol.steps{list-style:none; counter-reset:s; margin:0; padding:0}
+ol.steps li{counter-increment:s; position:relative; padding:0 0 0 46px; margin:0 0 20px}
+ol.steps li:before{
+  content:counter(s); position:absolute; left:0; top:0;
+  width:32px; height:32px; border-radius:9px; background:var(--navy);
+  color:var(--white); font-weight:700; font-size:15px;
+  display:flex; align-items:center; justify-content:center;
 }
-.check .box{
-  flex:0 0 auto;width:21px;height:21px;margin-top:1px;
-  border:2px solid var(--concrete);border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .16s,border-color .16s;
-}
-.check .box svg{width:12px;height:12px;opacity:0;transition:opacity .16s;}
-.check .box svg path{stroke:var(--white);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.check.done{background:#FAFBFB;border-color:var(--sandstone);}
-.check.done .box{background:var(--red);border-color:var(--red);}
-.check.done .box svg{opacity:1;}
-.check.done .label{color:#7A858C;}
-.check .label{font-size:15px;line-height:1.45;}
-body.ja .check .label{line-height:1.7;}
-.counter{
-  font-size:13px;font-weight:600;color:var(--red);
-  margin:0 0 12px;
-}
+section.dark ol.steps li:before{background:var(--agave)}
+ol.steps b{display:block}
+ol.steps span{font-size:15px; color:var(--grey)}
+section.dark ol.steps span{color:var(--sand)}
 
-/* ---------- callout ---------- */
-.note{
-  background:var(--sandstone);
-  border-radius:12px;padding:16px 18px;margin:18px 0;
-}
-.note p:last-child{margin-bottom:0;}
-.note .lbl{
-  font-size:11px;font-weight:700;letter-spacing:.13em;
-  color:var(--red);display:block;margin-bottom:7px;
-}
-.script{
-  border-left:3px solid var(--red);
-  padding:2px 0 2px 14px;margin:0 0 12px;
-  font-style:italic;color:var(--midnight);
-}
-body.ja .script{font-style:normal;}
+/* ===================== SUMMARY ROWS ===================== */
+.row{display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--concrete)}
+.row:last-child{border-bottom:0}
+.tag{flex:0 0 34px; height:34px; border-radius:9px; color:var(--white); font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center}
+.tag.light{color:var(--navy)}
+.row b{display:block}
+.row span.desc{font-size:15px; color:var(--grey); display:block}
+.row em{display:block; font-style:normal; font-size:14px; color:var(--lightgrey); margin-top:3px}
 
-/* ---------- resources / about ---------- */
-.about{font-size:14px;color:#4A555C;}
-.about b{color:var(--midnight);}
-.contact{font-size:14px;line-height:1.7;margin-top:16px;}
+/* ===================== PRICE LIST ===================== */
+.price{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.15)}
+.price:last-child{border-bottom:0}
+.price a{color:var(--white)}
+.price .amt{font-weight:700; color:var(--ocean); white-space:nowrap}
 
-/* ---------- sticky CTA ---------- */
-.cta{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(8px);
-  border-top:1px solid var(--concrete);
-  padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));
-}
-.cta-in{max-width:640px;margin:0 auto;}
-.cta a{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  background:var(--red);color:var(--white);
-  text-decoration:none;font-weight:700;font-size:16px;
-  padding:15px;border-radius:12px;
-  transition:background .18s;
-}
-.cta a:active{background:#A80029;}
-.cta small{
-  display:block;text-align:center;color:#6C777E;
-  font-size:12px;margin-top:7px;
-}
+/* ===================== FOOTER ===================== */
+footer{background:var(--navy); color:var(--lightgrey); padding:36px 0 44px; font-size:14px}
+footer b{color:var(--white)}
+footer a{color:var(--ocean)}
 
-footer{
-  padding:26px var(--pad) 30px;
-  border-top:1px solid var(--concrete);
-  font-size:12px;color:#7A858C;
-}
-footer .wrap{max-width:640px;}
-
-@media (min-width:680px){
-  :root{--pad:32px;}
-  .hero h1{font-size:40px;}
-  body.ja .hero h1{font-size:34px;}
-  .hero{padding:52px var(--pad) 46px;}
-  h2{font-size:25px;}
-}
-@media (prefers-reduced-motion:reduce){
-  *{transition:none !important;animation:none !important;}
-  html{scroll-behavior:auto;}
+/* ===================== ACCESSIBILITY AND PRINT ===================== */
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+@media print{
+  nav,.blot{display:none}
+  body{font-size:12pt}
+  section{page-break-inside:avoid; border-top:1px solid #ccc}
+  .hero,section.dark,footer{background:#fff !important; color:#000 !important}
+  .hero h1,section.dark h2,section.dark h3{color:#000 !important}
+  .hero p,section.dark p,footer{color:#333 !important}
+  a{color:#000 !important}
+  a:after{content:" (" attr(href) ")"; font-size:9pt; color:#666}
 }
 </style>
 </head>
-<body>
 
-<div class="brandbar">
-  <div class="brandbar-in">
-    <span class="wordmark">ROBERT HALF <span>| CYBER SECURITY</span></span>
-    <button class="langbtn" id="langbtn" type="button" aria-label="Switch language / 言語を切り替える">
-      <span class="on" data-l="en">EN</span>
-      <span data-l="ja">日本語</span>
-    </button>
-  </div>
-</div>
+<body class="lang-en">
 
+<!-- ============================ HERO ============================ -->
 <header class="hero">
-  <div class="hero-in">
-    <p class="eyebrow"><span lang="en">CANDIDATE GUIDE</span><span lang="ja">候補者向けガイド</span></p>
-    <h1><span lang="en">4 step checklist to changing jobs in Japan, <b>stress free</b></span><span lang="ja">ストレスなく転職するための<b>4ステップ チェックリスト</b></span></h1>
-    <p class="lede"><span lang="en">I help Japanese speaking cyber security people get more than one job offer.</span><span lang="ja">日本語を話すサイバーセキュリティ人材の方が、複数の内定を得られるようお手伝いします。</span></p>
-    <p class="byline"><b>Steven Li</b><br>
-      <span lang="en">Director, APAC | Cyber Security and Data<br>Last updated: July 2026</span>
-      <span lang="ja">ディレクター（APAC）｜サイバーセキュリティ・データ<br>最終更新：2026年7月</span>
-    </p>
+  <div class="blot blot-a"></div>
+  <div class="blot blot-b"></div>
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">A practical guide for high earners in Japan</p>
+    <p class="eyebrow" data-lang="ja">日本の高所得者のための実践ガイド</p>
+
+    <h1 data-lang="en">Building wealth in Japan</h1>
+    <h1 data-lang="ja">日本での資産形成</h1>
+
+    <p class="lede" style="color:var(--sand)" data-lang="en">Six legal ways to reduce your tax and grow your assets, with the people and tools I use myself.</p>
+    <p class="lede" style="color:var(--sand)" data-lang="ja">税負担を減らし、資産を増やすための6つの合法的な方法。私自身が使っている専門家やツールも紹介します。</p>
+
+    <!-- LAST UPDATED (1 of 2) -->
+    <p class="byline" data-lang="en"><b>Steven Li</b> &nbsp;&middot;&nbsp; Last updated August 2026</p>
+    <p class="byline" data-lang="ja"><b>Steven Li</b> &nbsp;&middot;&nbsp; 最終更新 2026年8月</p>
   </div>
 </header>
 
-<nav class="stepnav" aria-label="Jump to a step">
-  <div class="stepnav-in">
-    <a class="chip" href="#start"><span lang="en">Start here</span><span lang="ja">はじめに</span></a>
-    <a class="chip" href="#step1"><b>1</b><span lang="en">CV</span><span lang="ja">書類</span></a>
-    <a class="chip" href="#step2"><b>2</b><span lang="en">Interview</span><span lang="ja">面接</span></a>
-    <a class="chip" href="#step3"><b>3</b><span lang="en">Documents</span><span lang="ja">必要書類</span></a>
-    <a class="chip" href="#step4"><b>4</b><span lang="en">Offer</span><span lang="ja">内定</span></a>
-    <a class="chip" href="#work"><span lang="en">Working together</span><span lang="ja">進め方</span></a>
+<!-- ============================ NAV + LANGUAGE SWITCH ============================ -->
+<nav>
+  <div class="navinner">
+  <ul>
+    <li><a href="#idea"><span data-lang="en">The idea</span><span data-lang="ja">考え方</span></a></li>
+    <li><a href="#property"><span data-lang="en">Property</span><span data-lang="ja">不動産</span></a></li>
+    <li><a href="#angel"><span data-lang="en">Angel fund</span><span data-lang="ja">エンジェル投資</span></a></li>
+    <li><a href="#dependents"><span data-lang="en">Dependents</span><span data-lang="ja">扶養控除</span></a></li>
+    <li><a href="#nisa"><span data-lang="en">NISA</span><span data-lang="ja">NISA</span></a></li>
+    <li><a href="#furusato"><span data-lang="en">Furusato nozei</span><span data-lang="ja">ふるさと納税</span></a></li>
+    <li><a href="#pr"><span data-lang="en">Residence</span><span data-lang="ja">永住権</span></a></li>
+    <li><a href="#plan"><span data-lang="en">Your plan</span><span data-lang="ja">まとめ</span></a></li>
+  </ul>
+  <div class="langswitch" role="group" aria-label="Language / 言語">
+    <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+    <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+  </div>
   </div>
 </nav>
 
-<main class="wrap">
+<!-- ============================ THE IDEA + CALCULATOR ============================ -->
+<section id="idea">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">The starting point</p>
+    <p class="eyebrow" data-lang="ja">はじめに</p>
 
-  <section id="start">
-    <h2><span lang="en">What you get when we work together</span><span lang="ja">私と一緒に進めるメリット</span></h2>
-    <ul>
-      <li lang="en">You learn what your salary should be. I use real numbers from jobs we filled this year.</li>
-      <li lang="ja">適正な年収がわかります。今年実際に決まった案件の数字をもとにお伝えします。</li>
-      <li lang="en">You see jobs that are not online. More than half of our jobs are never posted on LinkedIn.</li>
-      <li lang="ja">公開されていない求人をご紹介します。当社の求人の半分以上はLinkedInに掲載していません。</li>
-      <li lang="en">Your CV goes straight to the hiring manager. We work with them directly on most of our jobs, so your CV does not sit in a pile.</li>
-      <li lang="ja">書類は採用責任者に直接届きます。ほとんどの求人で採用責任者と直接やり取りしているため、書類が埋もれることはありません。</li>
-      <li lang="en">You get interview coaching made for cyber security jobs in Japan.</li>
-      <li lang="ja">日本のサイバーセキュリティ求人に特化した面接対策を受けられます。</li>
-      <li lang="en">I ask for your salary for you. I do this every week, so I know what is possible.</li>
-      <li lang="ja">年収交渉は私が行います。毎週行っているので、どこまで可能かを把握しています。</li>
-      <li lang="en">I save you more than 100 hours of research and follow up.</li>
-      <li lang="ja">100時間以上の情報収集とフォローの手間を省けます。</li>
-      <li lang="en">You pay nothing. The company pays our fee.</li>
-      <li lang="ja">費用はかかりません。企業側が当社に費用を支払います。</li>
-    </ul>
+    <h2 data-lang="en">Japan taxes high income heavily</h2>
+    <h2 data-lang="ja">日本は高所得への課税が重い</h2>
 
-    <h3><span lang="en">How long it takes</span><span lang="ja">期間の目安</span></h3>
-    <p lang="en">Plan for three to six months from first conversation to first day. Senior security roles take longer.</p>
-    <p lang="ja">最初のご相談から入社までは3か月から6か月をみておいてください。シニアクラスの求人はさらに時間がかかります。</p>
-    <div class="timeline">
-      <div class="trow">
-        <span><span lang="en">CV creation and applications</span><span lang="ja">書類の作成と応募</span></span>
-        <span class="dur"><span lang="en">1 to 2 weeks</span><span lang="ja">1〜2週間</span></span>
+    <p data-lang="en">The top national income tax rate is 45%. Resident tax adds a flat 10% on top. At the highest band you keep only 45 yen of every extra 100 yen you earn.</p>
+    <p data-lang="ja">所得税の最高税率は45%です。これに住民税10%が一律で加わります。最高税率では、追加で得た100円のうち手元に残るのは45円だけです。</p>
+
+    <p data-lang="en">So the fastest way to build wealth here is not to earn more. It is to lower the income that gets taxed.</p>
+    <p data-lang="ja">つまり日本で資産を増やす近道は、収入を増やすことではありません。課税される所得を下げることです。</p>
+
+    <div class="calc">
+      <h3 data-lang="en">Pick your tax band</h3>
+      <h3 data-lang="ja">ご自身の所得帯を選んでください</h3>
+
+      <p class="hint" data-lang="en">Every figure on this page will update to match.</p>
+      <p class="hint" data-lang="ja">ページ内の金額がすべて自動で更新されます。</p>
+
+      <div class="bands" role="group" aria-label="Income band">
+        <button type="button" data-rate="0.43" aria-pressed="false"><span data-lang="en">¥10M to ¥18M</span><span data-lang="ja">1,000万〜1,800万円</span></button>
+        <button type="button" data-rate="0.50" aria-pressed="true"><span data-lang="en">¥19M to ¥40M</span><span data-lang="ja">1,900万〜4,000万円</span></button>
+        <button type="button" data-rate="0.55" aria-pressed="false"><span data-lang="en">¥41M and above</span><span data-lang="ja">4,100万円以上</span></button>
       </div>
-      <div class="trow">
-        <span><span lang="en">Interviews through to job offer</span><span lang="ja">面接から内定まで</span></span>
-        <span class="dur"><span lang="en">8 to 12 weeks</span><span lang="ja">8〜12週間</span></span>
-      </div>
-      <div class="trow">
-        <span><span lang="en">Resignation and notice period</span><span lang="ja">退職手続きと引き継ぎ</span></span>
-        <span class="dur"><span lang="en">4 to 8 weeks</span><span lang="ja">4〜8週間</span></span>
-      </div>
-      <div class="trow total">
-        <span><span lang="en">Total</span><span lang="ja">合計</span></span>
-        <span class="dur"><span lang="en">3 to 6 months</span><span lang="ja">3〜6か月</span></span>
+
+      <div class="calc-out">
+        <span class="rate-pill" id="rate-pill"></span>
+        <span class="figure" style="margin-top:12px" data-deduction="1000000">¥500,000</span>
+        <span class="figure-label" data-lang="en">Cash back for every ¥1,000,000 you remove from taxable income</span>
+        <span class="figure-label" data-lang="ja">課税所得を100万円減らすごとに手元に戻る金額</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="step1">
-    <div class="stephead">
-      <div class="numsq" aria-hidden="true">1</div>
-      <h2><span lang="en">CV creation</span><span lang="ja">応募書類の作成</span></h2>
-    </div>
+<!-- ============================ LEVER 01: PROPERTY ============================ -->
+<section id="property">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 01 &middot; Property investment</p>
+    <p class="eyebrow" data-lang="ja">方法1 &middot; 不動産投資</p>
 
-    <h3><span lang="en">Connect with me on LINE first</span><span lang="ja">まずLINEでつながってください</span></h3>
-    <p lang="en">Everything moves faster on LINE than email, especially interview scheduling.</p>
-    <p lang="ja">メールよりLINEの方が早く進みます。特に面接日程の調整がスムーズです。</p>
-    <ul>
-      <li lang="en">Add me directly: <a href="https://line.me/ti/p/VFbxzpEPH-">line.me/ti/p/VFbxzpEPH-</a></li>
-      <li lang="ja">こちらから追加してください：<a href="https://line.me/ti/p/VFbxzpEPH-">line.me/ti/p/VFbxzpEPH-</a></li>
-      <li lang="en">Or add my number to your contacts normally: <a href="tel:+818070422165">+81 70 1422 1650</a></li>
-      <li lang="ja">または電話番号で検索してください：<a href="tel:+818070422165">+81 70 1422 1650</a></li>
-    </ul>
+    <h2 data-lang="en">Build equity and lower your tax</h2>
+    <h2 data-lang="ja">資産を築きながら税金を減らす</h2>
 
-    <h3><span lang="en">Send me your English CV in Word format</span><span lang="ja">英文の職務経歴書をWord形式でお送りください</span></h3>
-    <ul>
-      <li lang="en">Article: <a href="https://www.linkedin.com/pulse/three-cv-tips-guaranteed-get-you-more-interviews-steven-li/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D">Three CV tips to land your next cyber security interview</a></li>
-      <li lang="ja">記事：<a href="https://www.linkedin.com/pulse/three-cv-tips-guaranteed-get-you-more-interviews-steven-li/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D">面接につながる職務経歴書の3つのコツ</a></li>
-      <li lang="en"><a href="https://docs.google.com/document/d/1v_lmnS79CIPcxEQC8zppYE5-srJ5t5la/edit?usp=drive_link&amp;ouid=100594451565742299685&amp;rtpof=true&amp;sd=true">CV template</a></li>
-      <li lang="ja"><a href="https://docs.google.com/document/d/1v_lmnS79CIPcxEQC8zppYE5-srJ5t5la/edit?usp=drive_link&amp;ouid=100594451565742299685&amp;rtpof=true&amp;sd=true">職務経歴書テンプレート</a></li>
-      <li lang="en">Quantify your achievements, not just your responsibilities. Scope, budget, headcount, incident volume, risk reduction.</li>
-      <li lang="ja">業務内容だけでなく、実績を数字で書いてください。担当範囲、予算、人数、対応件数、リスク削減など。</li>
-    </ul>
+    <p data-lang="en">A rental property in Japan usually runs at a paper loss in the early years, mostly because of depreciation. That loss comes off your salary income.</p>
+    <p data-lang="ja">日本の賃貸物件は、主に減価償却の影響で、初期の数年は帳簿上の赤字になることが多いです。その赤字は給与所得と損益通算できます。</p>
 
-    <h3><span lang="en">Send your Japanese CV and rirekisho if you have them</span><span lang="ja">日本語の職務経歴書と履歴書もあればお送りください</span></h3>
-    <ul>
-      <li lang="en">More Japanese companies now require both at application stage</li>
-      <li lang="ja">応募の段階で両方を求める企業が増えています</li>
-      <li lang="en">No photo needed.</li>
-      <li lang="ja">写真は不要です。</li>
-      <li lang="en"><a href="https://www.daijob.com/en/guide/tipsadvice/resume/rirekisyo/">Rirekisho template</a></li>
-      <li lang="ja"><a href="https://www.daijob.com/en/guide/tipsadvice/resume/rirekisyo/">履歴書テンプレート</a></li>
-      <li lang="en">Once you have created 1 CV, you can use AI to create the other documents</li>
-      <li lang="ja">1つ作成すれば、AIを使って他の書類も作成できます</li>
-    </ul>
-  </section>
-
-  <section id="step2">
-    <div class="stephead">
-      <div class="numsq" aria-hidden="true">2</div>
-      <h2><span lang="en">Interview preparation</span><span lang="ja">面接の準備</span></h2>
-    </div>
-
-    <p lang="en">Article: <a href="https://www.linkedin.com/pulse/essential-japan-cyber-security-interview-guide-steven-li-z0ywc/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D">The essential Japan cyber security interview guide</a></p>
-    <p lang="ja">記事：<a href="https://www.linkedin.com/pulse/essential-japan-cyber-security-interview-guide-steven-li-z0ywc/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D">日本のサイバーセキュリティ面接ガイド</a></p>
-
-    <h3><span lang="en">Spend 20 minutes on the investor relations report</span><span lang="ja">決算資料（IR資料）を20分読んでください</span></h3>
-    <p lang="en">This is the highest return preparation you can do. Focus on:</p>
-    <p lang="ja">最も効果の高い準備です。次の点を見てください。</p>
-    <ul>
-      <li lang="en">How revenue is segmented, by product, service or geography.</li>
-      <li lang="ja">売上の内訳。製品別、サービス別、地域別。</li>
-      <li lang="en">Key technology investments, particularly anything AI, cloud or data related.</li>
-      <li lang="ja">重点的な技術投資。特にAI、クラウド、データ関連。</li>
-      <li lang="en">The forward outlook and stated risks. Security sits directly underneath this.</li>
-      <li lang="ja">今後の見通しと、記載されているリスク。セキュリティはここに直接つながります。</li>
-    </ul>
-
-    <h3><span lang="en">Do not disclose your current salary or expectations</span><span lang="ja">現在の年収や希望額は伝えないでください</span></h3>
-    <p lang="en">Once you name a number, you cannot negotiate above it. I handle this conversation for you.</p>
-    <p lang="ja">一度金額を伝えると、それ以上の交渉はできません。この話は私が行います。</p>
-    <div class="note">
-      <span class="lbl"><span lang="en">IF YOU ARE PUSHED</span><span lang="ja">聞かれたときの答え方</span></span>
-      <p class="script" lang="en">"My agent holds the full detail of my salary and benefits, and I would rather not give you a figure that turns out to be wrong."</p>
-      <p class="script" lang="ja">「年収や待遇の詳細はエージェントが把握しています。誤った金額をお伝えしたくないので、そちらにご確認ください。」</p>
-      <p lang="en">Or give a wide band, for example 15 to 17 million JPY, which preserves room to move.</p>
-      <p lang="ja">または幅を持たせて答えてください。例えば1,500万円から1,700万円と伝えれば、交渉の余地が残ります。</p>
-    </div>
-
-    <h3><span lang="en">SPI test (Synthetic Personality Inventory)</span><span lang="ja">SPI（総合適性検査）</span></h3>
-    <p lang="en">Designed for graduate hiring, but some Japanese companies still run it on all hires late in the process. It covers language, maths and personality.</p>
-    <p lang="ja">本来は新卒採用向けですが、選考の終盤で全員に実施する企業もあります。言語、非言語（計数）、性格検査で構成されています。</p>
-    <ul>
-      <li lang="en">Every question is timed and you cannot skip.</li>
-      <li lang="ja">各問題に制限時間があり、飛ばすことはできません。</li>
-      <li lang="en">Each section is separately timed. Overspend on one question and you lose the chance to answer others in that section.</li>
-      <li lang="ja">分野ごとにも制限時間があります。1問に時間を使いすぎると、その分野の残りの問題に答えられなくなります。</li>
-      <li lang="en">English overview: <a href="https://japan-dev.com/blog/spi-test">japan-dev.com/blog/spi-test</a></li>
-      <li lang="ja">英語の解説：<a href="https://japan-dev.com/blog/spi-test">japan-dev.com/blog/spi-test</a></li>
-      <li lang="en">Japanese YouTube channel: <a href="https://www.youtube.com/@oinary">youtube.com/@oinary</a></li>
-      <li lang="ja">日本語のYouTubeチャンネル：<a href="https://www.youtube.com/@oinary">youtube.com/@oinary</a></li>
-      <li lang="en">Japanese practice book, optional: <a href="https://amzn.asia/d/0EedvsT">amzn.asia/d/0EedvsT</a></li>
-      <li lang="ja">日本語の対策本（任意）：<a href="https://amzn.asia/d/0EedvsT">amzn.asia/d/0EedvsT</a></li>
-    </ul>
-  </section>
-
-  <section id="step3">
-    <div class="stephead">
-      <div class="numsq" aria-hidden="true">3</div>
-      <h2><span lang="en">Offer documents and reference checks</span><span lang="ja">必要書類とリファレンスチェック</span></h2>
-    </div>
-
-    <p lang="en">Send these to me after your second interview. Having them ready means no delay when an offer lands.</p>
-    <p lang="ja">二次面接の後にお送りください。事前に準備しておくと、内定が出たときに手続きが遅れません。</p>
-
-    <h3><span lang="en">Documents</span><span lang="ja">必要書類</span></h3>
-    <p class="counter" data-counter="docs"></p>
-    <div data-group="docs">
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false">
-        <span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span>
-        <span class="label"><span lang="en">Zairyu card (residence card) or Japanese driver's licence, front and back.</span><span lang="ja">在留カードまたは運転免許証の、表と裏の写真。</span></span>
-      </div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false">
-        <span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span>
-        <span class="label"><span lang="en">Last two years of gensen choshu hyo (year end tax summary).</span><span lang="ja">直近2年分の源泉徴収票。</span></span>
-      </div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false">
-        <span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span>
-        <span class="label"><span lang="en">Last three months of payslips.</span><span lang="ja">直近3か月分の給与明細。</span></span>
-      </div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false">
-        <span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span>
-        <span class="label"><span lang="en">Last two bonus payslips.</span><span lang="ja">直近2回分の賞与明細。</span></span>
+    <div class="card navy">
+      <span class="figure"><span data-lang="en">about </span><span data-lang="ja">約 </span>¥900,000</span>
+      <span class="figure-label" data-lang="en">Taxable income removed per property, per year</span>
+      <span class="figure-label" data-lang="ja">1物件あたり年間で減らせる課税所得</span>
+      <div class="value">
+        <span data-lang="en">Cash back in your pocket</span>
+        <span data-lang="ja">手元に戻る金額</span>
+        <b data-deduction="900000">¥450,000</b>
       </div>
     </div>
 
-    <h3><span lang="en">Reference checks</span><span lang="ja">リファレンスチェック</span></h3>
-    <p lang="en">Two references are required. Please let them know I will be in touch to arrange a time.</p>
-    <p lang="ja">2名分が必要です。私から日程調整のご連絡をすることを、事前にお伝えください。</p>
-    <ul>
-      <li lang="en">At least one person who directly managed you.</li>
-      <li lang="ja">1名は直属の上司だった方。</li>
-      <li lang="en">Ideally someone who worked closely with you on security work.</li>
-      <li lang="ja">セキュリティ業務で近くで働いていた方が理想です。</li>
-      <li lang="en">Avoid your current employer unless you are comfortable with them knowing you are moving.</li>
-      <li lang="ja">現在の勤務先は、転職を知られても問題ない場合を除いて避けてください。</li>
-    </ul>
-    <p lang="en">For each reference I need: name, contact number, email, company, position, and whether they can speak English.</p>
-    <p lang="ja">各方について、氏名、電話番号、メールアドレス、会社名、役職、英語対応の可否をお知らせください。</p>
-    <ul>
-      <li lang="en">Reference check, <a href="https://drive.google.com/file/d/1tgpZ5gqJmtGsqpC6iGbT-Ljkvb2mbtpJ/view?usp=drive_link">English form</a></li>
-      <li lang="ja">リファレンスチェック <a href="https://drive.google.com/file/d/1tgpZ5gqJmtGsqpC6iGbT-Ljkvb2mbtpJ/view?usp=drive_link">英語フォーム</a></li>
-    </ul>
-  </section>
+    <!-- PARTNER: Post Lintel -->
+    <div class="partner">
+      <p class="role" data-lang="en">My property contact</p>
+      <p class="role" data-lang="ja">不動産の担当者</p>
 
-  <section id="step4">
-    <div class="stephead">
-      <div class="numsq" aria-hidden="true">4</div>
-      <h2><span lang="en">Offer acceptance and resignation</span><span lang="ja">内定承諾と退職手続き</span></h2>
+      <h3>Xuling Wang <span style="font-weight:400; color:var(--grey)">&middot; Post Lintel</span></h3>
+
+      <p class="small" data-lang="en">She sources off market deals, supports loan applications, and gives end to end support in English, Japanese or Chinese.</p>
+      <p class="small" data-lang="ja">非公開の物件情報を探し、ローン申請をサポートし、英語・日本語・中国語で最初から最後まで対応します。</p>
+
+      <p class="small" data-lang="en"><b>Book a time through her Calendly and mention my name to be prioritised.</b></p>
+      <p class="small" data-lang="ja"><b>Calendlyから予約し、私の名前を伝えると優先的に対応してもらえます。</b></p>
+
+      <a class="btn" href="https://calendly.com/xwang-post-lintel/30min" target="_blank" rel="noopener"><span data-lang="en">Book a call with Xuling</span><span data-lang="ja">Xulingに相談する</span></a>
+      <a class="btn alt" href="https://www.linkedin.com/in/xulingwang/" target="_blank" rel="noopener">LinkedIn</a>
+
+      <!-- PRIVATE LINK. Delete this block to hide the client presentation. -->
+      <p class="small" style="margin-top:14px"><a href="https://drive.google.com/file/d/1sBuHr8KBKUZK-F9-WUcCaxxouia6j6CG/view" target="_blank" rel="noopener"><span data-lang="en">Client presentation v2.5</span><span data-lang="ja">顧客向け資料 v2.5</span></a></p>
     </div>
 
-    <h3><span lang="en">Questions to ask in the offer meeting</span><span lang="ja">内定面談で確認する質問</span></h3>
-    <ul>
-      <li lang="en">How is the bonus calculated, and how much of it is company, team and personal performance?</li>
-      <li lang="ja">賞与はどのように決まりますか。会社業績、チーム業績、個人評価の割合は。</li>
-      <li lang="en">Which months is the bonus paid?</li>
-      <li lang="ja">賞与の支給月はいつですか。</li>
-      <li lang="en">In year one, do new joiners receive the full bonus or is it prorated to your start date?</li>
-      <li lang="ja">入社1年目は満額支給ですか。それとも入社日に応じた按分ですか。</li>
-      <li lang="en">What is the review cycle, and when would your first salary review fall?</li>
-      <li lang="ja">評価のサイクルと、最初の昇給のタイミングはいつですか。</li>
+    <h4 data-lang="en">What she looks for</h4>
+    <h4 data-lang="ja">物件選びの基準</h4>
+    <ul class="plain" data-lang="en">
+      <li>Units under 30 square metres</li>
+      <li>Tokyo and Osaka</li>
+      <li>High demand areas</li>
+      <li>Within a 10 minute walk of a train station</li>
+      <li>Typical price range ¥18M to ¥40M</li>
+    </ul>
+    <ul class="plain" data-lang="ja">
+      <li>30平方メートル未満の物件</li>
+      <li>東京と大阪</li>
+      <li>需要の高いエリア</li>
+      <li>駅から徒歩10分以内</li>
+      <li>価格帯は1,800万〜4,000万円が目安</li>
     </ul>
 
-    <h3><span lang="en">Resignation checklist</span><span lang="ja">退職チェックリスト</span></h3>
-    <p class="counter" data-counter="resign"></p>
-    <div data-group="resign">
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Sign the offer letter and confirm your start date with the new employer.</span><span lang="ja">内定通知書に署名し、入社日を確定します。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Check your notice period in your employment rules (shugyo kisoku). One month is the common standard in Japan</span><span lang="ja">就業規則で退職の申出期間を確認します。日本では1か月前が一般的です。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Start dates are usually the 1st or 15th of the month, because onboarding runs in batches.</span><span lang="ja">入社日は月の1日または15日が一般的です。入社手続きをまとめて行うためです。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Decide your last working day and your last day on payroll. These are often different.</span><span lang="ja">最終出社日と退職日を決めます。この2つは異なることが多いです。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Unused annual leave is generally not paid out, so plan to use it before your final day.</span><span lang="ja">残った有給休暇は買い取られないことが多いため、最終日までに消化する計画を立ててください。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Prepare a written list of open tasks and responsibilities for handover.</span><span lang="ja">引き継ぎのため、進行中の業務と担当範囲を書き出します。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Book a meeting with your manager to resign in person. If they are away for more than a few days, speak to their manager instead.</span><span lang="ja">上司に直接会って退職の意思を伝えます。数日以上不在の場合は、その上の上司に伝えてください。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Follow the meeting with a short email so the resignation is on record.</span><span lang="ja">面談の後に短いメールを送り、記録に残します。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Prepare your response to a counter offer in advance.</span><span lang="ja">引き止め（カウンターオファー）への返答を、事前に準備します。</span></span></div>
-      <div class="check" role="checkbox" tabindex="0" aria-checked="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span><span class="label"><span lang="en">Expect paper forms by post from Japanese employers before you start.</span><span lang="ja">入社前に、紙の書類が郵送で届くことが多いです。</span></span></div>
+    <h4 data-lang="en">Financing</h4>
+    <h4 data-lang="ja">融資</h4>
+    <div class="grid two">
+      <div class="card sand">
+        <h3 data-lang="en">Permanent resident or Japanese citizen</h3>
+        <h3 data-lang="ja">永住者または日本国籍</h3>
+        <span class="figure sm" style="color:var(--agave)"><span data-lang="en">up to </span><span data-lang="ja">最大 </span>100%</span>
+        <p class="small" style="margin-top:6px" data-lang="en">Cash needed up front is often under ¥1,000,000.</p>
+        <p class="small" style="margin-top:6px" data-lang="ja">初期費用は100万円未満で済むことが多いです。</p>
+      </div>
+      <div class="card sand">
+        <h3 data-lang="en">Without permanent residence</h3>
+        <h3 data-lang="ja">永住権がない場合</h3>
+        <span class="figure sm"><span data-lang="en">up to </span><span data-lang="ja">最大 </span>70%</span>
+        <p class="small" style="margin-top:6px" data-lang="en">You fund the rest yourself, and fewer banks will consider you.</p>
+        <p class="small" style="margin-top:6px" data-lang="ja">残りは自己資金が必要で、対応する銀行も限られます。</p>
+      </div>
     </div>
 
-    <div class="note">
-      <span class="lbl"><span lang="en">ON COUNTER OFFERS</span><span lang="ja">引き止めについて</span></span>
-      <p lang="en">A counter offer usually fixes the salary and none of the reasons you started looking. In our experience the large majority of people who accept one are back in the market within six months, having lost the offer they had and some credibility internally.</p>
-      <p lang="ja">引き止めで年収は上がっても、転職を考えた理由そのものは解決しないことがほとんどです。私の経験では、引き止めを受け入れた方の多くが半年以内に再び転職活動を始めています。そのときには、得ていた内定も社内での信頼も失っています。</p>
+    <h4 data-lang="en">Common tax deductions</h4>
+    <h4 data-lang="ja">経費にできるもの</h4>
+    <ul class="plain" data-lang="en">
+      <li>Depreciation and loan interest</li>
+      <li>Property management fees</li>
+      <li>Repair and maintenance costs</li>
+      <li>Insurance premiums</li>
+      <li>Leasing and agent fees</li>
+      <li>Professional fees for tax accountant and legal</li>
+      <li>Utilities paid by the owner</li>
+      <li>Travel and transport related to the property</li>
+      <li>Loan and banking fees</li>
+    </ul>
+    <ul class="plain" data-lang="ja">
+      <li>減価償却とローン利息</li>
+      <li>管理費</li>
+      <li>修繕費</li>
+      <li>保険料</li>
+      <li>仲介手数料</li>
+      <li>税理士や司法書士への報酬</li>
+      <li>オーナーが負担する光熱費</li>
+      <li>物件に関わる交通費</li>
+      <li>ローン関連の銀行手数料</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ LEVER 02: ANGEL FUND ============================ -->
+<section id="angel" class="dark">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 02 &middot; Angel fund investment</p>
+    <p class="eyebrow" data-lang="ja">方法2 &middot; エンジェル投資</p>
+
+    <h2 data-lang="en">Back Japanese founders and claim the deduction</h2>
+    <h2 data-lang="ja">起業家を支援しながら控除を受ける</h2>
+
+    <p data-lang="en">Japan's Ministry of Economy, Trade and Industry runs an angel investor scheme. Money you put into qualifying early stage companies can be deducted from your income.</p>
+    <p data-lang="ja">経済産業省はエンジェル税制を設けています。対象となるスタートアップへの投資額を所得から控除できます。</p>
+
+    <div class="card red">
+      <span class="figure"><span data-lang="en">up to </span><span data-lang="ja">最大 </span>¥8,000,000</span>
+      <span class="figure-label" data-lang="en">Deduction available under the METI angel scheme</span>
+      <span class="figure-label" data-lang="ja">エンジェル税制で受けられる控除額</span>
+      <div class="value">
+        <span data-lang="en">Cash back in your pocket</span>
+        <span data-lang="ja">手元に戻る金額</span>
+        <b data-deduction="8000000">¥4,000,000</b>
+      </div>
     </div>
-  </section>
 
-  <section id="work">
-    <h2><span lang="en">How we work together</span><span lang="ja">一緒に進めるために</span></h2>
-    <p lang="en">I can deliver the above because I work with a maximum of ten candidates at a time. Two things make the process work:</p>
-    <p lang="ja">同時にお手伝いするのは最大10名までです。だからこそ、ここまでの内容をお約束できます。うまく進めるために、2点お願いがあります。</p>
-    <ul>
-      <li lang="en"><b>Let me represent you.</b> If you see a role elsewhere, through another agent or directly, come to me first. Companies typically hold a 12 month ownership period on any application, so once your CV is in through another route I cannot help you there. You may also never reach interview, because most agents do not have the hiring manager relationship to follow up on your behalf.</li>
-      <li lang="ja"><b>窓口は私に任せてください。</b>他のエージェントや直接応募で求人を見つけた場合も、まず私にご連絡ください。多くの企業は応募情報を12か月間保持するため、他の経路で書類が提出されると、その企業ではお手伝いできなくなります。また、採用責任者との関係がないエージェントも多く、面接まで進まないこともあります。</li>
-      <li lang="en"><b>Reply quickly on scheduling.</b> Interview slots for senior security leaders move fast</li>
-      <li lang="ja"><b>日程調整は早めにご返信ください。</b>シニアクラスの面接枠はすぐに埋まります。</li>
+    <div class="partner">
+      <p class="role" data-lang="en">The fund I invest in</p>
+      <p class="role" data-lang="ja">私が投資しているファンド</p>
+
+      <h3>Shizen.vc</h3>
+
+      <p class="small" data-lang="en">Invests in eight to twelve angel companies a year. Minimum investment ¥5,000,000. The maximum I would recommend is around ¥10,500,000.</p>
+      <p class="small" data-lang="ja">年間8〜12社に投資します。最低投資額は500万円。私がおすすめする上限は1,050万円程度です。</p>
+
+      <a class="btn" href="https://shizen.vc" target="_blank" rel="noopener"><span data-lang="en">Visit Shizen.vc</span><span data-lang="ja">Shizen.vcを見る</span></a>
+
+      <p class="small" style="margin-top:14px" data-lang="en"><b>Speak to me for an introduction to the co-founders.</b></p>
+      <p class="small" style="margin-top:14px" data-lang="ja"><b>共同創業者への紹介が必要でしたらご連絡ください。</b></p>
+    </div>
+
+    <h4 data-lang="en">What I like</h4>
+    <h4 data-lang="ja">評価している点</h4>
+    <ul class="plain" data-lang="en">
+      <li>Founders with a track record of building and exiting their own companies</li>
+      <li>Attention to preserving shareholder capital</li>
+      <li>Access to the Limited Partner community and its events</li>
+      <li>Founders use the expertise of the LPs to evaluate new companies and support existing ones</li>
+    </ul>
+    <ul class="plain" data-lang="ja">
+      <li>自ら会社を立ち上げ、売却した実績のある創業者</li>
+      <li>出資者の資本を守る姿勢</li>
+      <li>LPコミュニティとイベントへの参加</li>
+      <li>LPの知見を新規投資先の評価や既存投資先の支援に活かしている</li>
     </ul>
 
-    <h3><span lang="en">Compliance registration</span><span lang="ja">コンプライアンス登録</span></h3>
-    <p lang="en">A colleague will send you a two minute DocuSign form asking for your name, mobile, email and signature. This is the compliance document that lets me send your CV to clients with your permission.</p>
-    <p lang="ja">担当者から、2分ほどで完了するDocuSignのフォームをお送りします。氏名、携帯番号、メールアドレス、署名をご記入ください。ご本人の同意のもとで書類を企業に送るために必要な書類です。</p>
-  </section>
+    <div class="card note">
+      <h3 data-lang="en">Read the fees before you commit</h3>
+      <h3 data-lang="ja">手数料を必ず確認してください</h3>
+      <p class="small" style="color:#fff" data-lang="en">2% to 3% per year, paid up front for ten years. The percentage depends on the amount you invest and the month you invest. The tax deduction does not apply to fees paid into the fund.</p>
+      <p class="small" style="color:#fff" data-lang="ja">年2〜3%を10年分まとめて前払いします。料率は投資額と投資する月によって変わります。この手数料は控除の対象外です。</p>
+    </div>
 
-  <section id="resources">
-    <h2><span lang="en">Bonus resources</span><span lang="ja">参考資料</span></h2>
-    <ul>
-      <li lang="en"><a href="https://cybersteve1650.github.io/"><b>Building wealth in Japan</b></a>. My tips on reducing tax here: property investment, NISA, furusato nozei, permanent residency application, dependent deduction and angel fund investment.</li>
-      <li lang="ja"><a href="https://cybersteve1650.github.io/"><b>日本での資産形成</b></a>。税負担を抑える方法をまとめています。不動産投資、NISA、ふるさと納税、永住権の申請、扶養控除、エンジェル投資など。</li>
-      <li lang="en"><a href="https://www.linkedin.com/pulse/mastering-performance-reviews-proven-strategies-career-steven-li-wbhnc/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D"><b>Mastering performance reviews</b></a>: proven strategies for career success.</li>
-      <li lang="ja"><a href="https://www.linkedin.com/pulse/mastering-performance-reviews-proven-strategies-career-steven-li-wbhnc/?trackingId=xzpCr68wQ96qz54KkY9V2A%3D%3D"><b>人事評価を味方につける</b></a>：キャリアを伸ばすための方法。</li>
-      <li lang="en"><b>2026 Robert Half Japan Salary Guide</b>, technology and IT: <a href="https://www.roberthalf.com/jp/en/insights/salary-guide/technology">roberthalf.com/jp/en/insights/salary-guide/technology</a></li>
-      <li lang="ja"><b>2026年 ロバート・ハーフ給与ガイド</b>（テクノロジー・IT）：<a href="https://www.roberthalf.com/jp/en/insights/salary-guide/technology">roberthalf.com/jp/en/insights/salary-guide/technology</a></li>
-    </ul>
+    <p class="tiny" data-lang="en">This is a long hold. Treat it as money you will not see again for several years.</p>
+    <p class="tiny" data-lang="ja">長期の投資です。数年間は動かせない資金と考えてください。</p>
+  </div>
+</section>
 
-    <h3><span lang="en">Referrals</span><span lang="ja">ご紹介について</span></h3>
-    <p lang="en">I have spent more than 10,000 hours with hiring managers to make this process as smooth as possible for you. If it helps you, forward it to someone who needs it. We offer a 30,000 JPY Amazon gift voucher for a successful new client or candidate referral, payable once the candidate passes three months in the role.</p>
-    <p lang="ja">採用責任者と1万時間以上向き合い、できるだけスムーズに転職できる形をつくってきました。役に立ったと感じたら、必要な方に転送してください。ご紹介いただいた方の入社後3か月が経過した時点で、3万円分のAmazonギフト券をお贈りします。</p>
-  </section>
+<!-- ============================ LEVER 03: DEPENDENTS ============================ -->
+<section id="dependents">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 03 &middot; Dependent deductions</p>
+    <p class="eyebrow" data-lang="ja">方法3 &middot; 扶養控除</p>
 
-  <section id="about">
-    <h2><span lang="en">About Steven Li</span><span lang="ja">スティーブン・リーについて</span></h2>
-    <div class="about">
-      <p lang="en">Steven is a Director at Robert Half's Tokyo office, leading the cyber security and data recruitment practice.</p>
-      <p lang="ja">ロバート・ハーフ東京オフィスのディレクターとして、サイバーセキュリティとデータ領域の人材紹介を担当しています。</p>
-      <p lang="en">He hosts invitation only senior leadership roundtables with partners including Google, Microsoft and Sony. Before recruitment, he spent his career at two tier one Australian banks as a Market Risk Oversight Manager in financial markets.</p>
-      <p lang="ja">Google、Microsoft、ソニーなどのパートナー企業とともに、招待制のシニアリーダー向け円卓会議を主催しています。人材業界の前は、オーストラリアの大手銀行2行で、金融市場部門のマーケットリスク管理マネージャーを務めていました。</p>
-      <p lang="en">Come and meet the community at the next Cyber Risk Meetup. Details are posted on LinkedIn: <a href="https://www.cyberriskmeetup.com/tokyo">cyberriskmeetup.com/tokyo</a></p>
-      <p lang="ja">次回のCyber Risk Meetupでお会いしましょう。詳細はLinkedInに掲載しています：<a href="https://www.cyberriskmeetup.com/tokyo">cyberriskmeetup.com/tokyo</a></p>
-      <p class="contact">
-        <b><span lang="en">Robert Half, Tokyo office</span><span lang="ja">ロバート・ハーフ 東京オフィス</span></b><br>
-        <a href="tel:+818070422165">+81 70 1422 1650</a><br>
-        <a href="mailto:steven.li@roberthalf.jp">steven.li@roberthalf.jp</a><br>
-        <a href="https://www.linkedin.com/in/cybersteve/"><span lang="en">Full bio</span><span lang="ja">詳しいプロフィール</span></a>
+    <h2 data-lang="en">Support family, lower your tax</h2>
+    <h2 data-lang="ja">家族を支えながら税金を減らす</h2>
+
+    <p data-lang="en">If you send money to family who depend on you, in Japan or overseas, you can claim a deduction for each person.</p>
+    <p data-lang="ja">日本国内または海外の扶養家族に送金している場合、一人につき控除を受けられます。</p>
+
+    <div class="grid two">
+      <div class="card navy">
+        <span class="figure sm">¥380,000</span>
+        <span class="figure-label" data-lang="en">General dependent, age 16 to 18 or 23 to 69</span>
+        <span class="figure-label" data-lang="ja">一般の扶養親族（16〜18歳、23〜69歳）</span>
+        <div class="value"><span data-lang="en">You keep</span><span data-lang="ja">手元に残る金額</span> <b data-deduction="380000">¥190,000</b></div>
+      </div>
+      <div class="card red">
+        <span class="figure sm">¥480,000</span>
+        <span class="figure-label" data-lang="en">Elderly dependent, age 70 and above</span>
+        <span class="figure-label" data-lang="ja">老人扶養親族（70歳以上）</span>
+        <div class="value"><span data-lang="en">You keep</span><span data-lang="ja">手元に残る金額</span> <b data-deduction="480000">¥240,000</b></div>
+      </div>
+    </div>
+
+    <p class="small" data-lang="en">The deduction is claimed per person, so several family members can qualify.</p>
+    <p class="small" data-lang="ja">控除は一人ずつ申請できるため、複数の家族が対象になります。</p>
+
+    <h4 data-lang="en">Four rules that decide if your claim is accepted</h4>
+    <h4 data-lang="ja">認められるための4つのポイント</h4>
+
+    <ol class="steps" data-lang="en">
+      <li><b>Prove the relationship</b><span>A document such as a birth certificate, translated officially into Japanese.</span></li>
+      <li><b>Send the full amount inside one month</b><span>Send to all dependents in the same month so everything sits on one statement.</span></li>
+      <li><b>Keep bank statement evidence from your side only</b><span>Statements must show the money leaving your own account.</span></li>
+      <li><b>Submit at the year end tax adjustment</b><span>Give the evidence to your employer during the YETA.</span></li>
+    </ol>
+    <ol class="steps" data-lang="ja">
+      <li><b>続柄を証明する</b><span>出生証明書などを日本語に公式翻訳したものが必要です。</span></li>
+      <li><b>送金は1か月以内にまとめる</b><span>全員に同じ月に送金すれば、証明が一枚の明細に収まります。</span></li>
+      <li><b>自分の口座側の明細を残す</b><span>自分の口座から出金されたことが分かる明細が必要です。</span></li>
+      <li><b>年末調整で提出する</b><span>年末調整のときに勤務先へ書類を提出します。</span></li>
+    </ol>
+
+    <div class="partner">
+      <p class="role" data-lang="en">The translator I use</p>
+      <p class="role" data-lang="ja">私が使っている翻訳会社</p>
+
+      <h3>Sakura Immigration Lawyer's Translation</h3>
+
+      <p class="small" data-lang="en">¥3,000 per birth certificate translation plus ¥430 postage. Payment by bank transfer. Translated documents arrived in my mailbox two days after payment.</p>
+      <p class="small" data-lang="ja">出生証明書の翻訳は1通3,000円、郵送料430円。銀行振込で支払い、入金の2日後に郵便で届きました。</p>
+
+      <a class="btn" href="https://en.wwtransjapan.com/" target="_blank" rel="noopener"><span data-lang="en">Visit the translator</span><span data-lang="ja">翻訳会社を見る</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEVER 04: NISA ============================ -->
+<section id="nisa" class="tint">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 04 &middot; NISA</p>
+    <p class="eyebrow" data-lang="ja">方法4 &middot; NISA</p>
+
+    <h2 data-lang="en">Tax free investing for life</h2>
+    <h2 data-lang="ja">一生使える非課税投資</h2>
+
+    <p data-lang="en">Normally dividends and capital gains are taxed at 20.315%, made up of 15% income tax, 5% residence tax and 0.315% special reconstruction tax. Inside a NISA account you pay none of it.</p>
+    <p data-lang="ja">通常、配当と譲渡益には20.315%（所得税15%、住民税5%、復興特別所得税0.315%）が課税されます。NISA口座ではこれがかかりません。</p>
+
+    <div class="grid two">
+      <div class="card">
+        <span class="figure sm">¥3.6M</span>
+        <span class="figure-label" data-lang="en">Each year, split into ¥1.2M stable and ¥2.4M growth</span>
+        <span class="figure-label" data-lang="ja">年間の枠。つみたて枠120万円と成長枠240万円の合計</span>
+      </div>
+      <div class="card">
+        <span class="figure sm">¥18M</span>
+        <span class="figure-label" data-lang="en">Lifetime contribution limit</span>
+        <span class="figure-label" data-lang="ja">生涯の非課税保有限度額</span>
+      </div>
+    </div>
+
+    <p class="small" data-lang="en">Open an account with Rakuten Securities, SBI or Monex. I use Rakuten Securities. A diversified portfolio of stocks and ETFs works well. You can withdraw at any time, but check the reinvestment rules before you do.</p>
+    <p class="small" data-lang="ja">楽天証券、SBI証券、マネックス証券などで口座を開けます。私は楽天証券を使っています。株式やETFに分散した組み合わせが有効です。いつでも引き出せますが、枠の再利用のルールを先に確認してください。</p>
+
+    <div class="partner">
+      <p class="role" data-lang="en">Worth reading</p>
+      <p class="role" data-lang="ja">参考になる資料</p>
+
+      <h3>RetireJapan NISA guide</h3>
+
+      <p class="small" data-lang="en">The clearest plain English explanation of how the account works.</p>
+      <p class="small" data-lang="ja">制度の仕組みを平易な英語で最も分かりやすく説明しています。</p>
+
+      <a class="btn" href="https://www.retirejapan.com/nisa/" target="_blank" rel="noopener"><span data-lang="en">Read the guide</span><span data-lang="ja">ガイドを読む</span></a>
+    </div>
+
+    <h4 data-lang="en">My own portfolio</h4>
+    <h4 data-lang="ja">私のポートフォリオ</h4>
+    <div class="card navy">
+      <p class="small" style="color:var(--sand); margin-bottom:10px">
+        <a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000H1T1" target="_blank" rel="noopener">eMAXIS Slim Global Stocks (All Country)</a>
+        <span data-lang="en"> &nbsp;50%, growth</span><span data-lang="ja"> &nbsp;50%・成長投資枠</span>
+      </p>
+      <p class="small" style="color:var(--sand); margin-bottom:10px">
+        <a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000GKC6" target="_blank" rel="noopener">eMAXIS Slim US Stocks (S&amp;P 500)</a>
+        <span data-lang="en"> &nbsp;33%, tsumitate</span><span data-lang="ja"> &nbsp;33%・つみたて投資枠</span>
+      </p>
+      <p class="small" style="color:var(--sand)">
+        <a href="https://www.rakuten-sec.co.jp/web/fund/detail/?ID=JP90C000PCX0" target="_blank" rel="noopener">iFreeNEXT Indian Stock Index</a>
+        <span data-lang="en"> &nbsp;17%, growth</span><span data-lang="ja"> &nbsp;17%・成長投資枠</span>
       </p>
     </div>
-  </section>
 
-</main>
+    <div class="card note">
+      <h3 data-lang="en">United States taxpayers, take care</h3>
+      <h3 data-lang="ja">米国の納税義務がある方はご注意ください</h3>
+      <p class="small" style="color:#fff" data-lang="en">NISA only removes Japanese tax. The United States still taxes the investments, so NISA does not remove your US reporting. Interactive Brokers is the practical choice used by US citizens to streamline reporting, and it covers the growth portion only, up to ¥18M.</p>
+      <p class="small" style="color:#fff" data-lang="ja">NISAで非課税になるのは日本の税金だけです。米国では引き続き課税と申告が必要です。米国籍の方はInteractive Brokersを使うと申告がしやすくなります。対象は成長投資枠のみで、上限は1,800万円です。</p>
+      <a class="btn alt" href="https://www.interactivebrokers.co.jp/en/accounts/nisa-accounts.php" target="_blank" rel="noopener">Interactive Brokers NISA</a>
+    </div>
+  </div>
+</section>
 
+<!-- ============================ LEVER 05: FURUSATO NOZEI ============================ -->
+<section id="furusato" class="dark">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 05 &middot; Furusato nozei</p>
+    <p class="eyebrow" data-lang="ja">方法5 &middot; ふるさと納税</p>
+
+    <h2 data-lang="en">Turn tax you already owe into goods you want</h2>
+    <h2 data-lang="ja">払う税金を欲しいものに変える</h2>
+
+    <p data-lang="en">You donate to local governments around Japan and receive gifts in return, such as wagyu, rice and furniture. Almost the whole donation comes back off your resident tax.</p>
+    <p data-lang="ja">全国の自治体に寄付をすると、和牛や米、家具などの返礼品が届きます。寄付額のほぼ全額が住民税から差し引かれます。</p>
+
+    <ol class="steps" data-lang="en">
+      <li><b>Work out your limit</b><span>First reduce your income by your other deductions, such as property and dependents. Then use the calculator.</span></li>
+      <li><b>Donate before 31 December</b><span>Choose the towns and pick your gifts.</span></li>
+      <li><b>Receive the goods</b><span>They arrive through the year, direct from the town.</span></li>
+      <li><b>Pay less resident tax</b><span>In June the following year you see the reduction on the small white and green paper, equal to your donation up to your allowance.</span></li>
+    </ol>
+    <ol class="steps" data-lang="ja">
+      <li><b>上限額を計算する</b><span>先に不動産や扶養などの控除で所得を下げてから、計算ツールを使ってください。</span></li>
+      <li><b>12月31日までに寄付する</b><span>自治体と返礼品を選びます。</span></li>
+      <li><b>返礼品を受け取る</b><span>自治体から一年を通して届きます。</span></li>
+      <li><b>住民税が減る</b><span>翌年6月に届く白と緑の住民税通知書で、上限までの寄付額が控除されているのを確認できます。</span></li>
+    </ol>
+
+    <div class="card red">
+      <span class="figure">¥564,000</span>
+      <span class="figure-label" data-lang="en">Roughly what you can donate on a ¥20,000,000 salary</span>
+      <span class="figure-label" data-lang="ja">年収2,000万円の場合の寄付上限の目安</span>
+      <p class="small" style="color:#fff; margin-top:12px" data-lang="en">The gifts are capped at 30% of the donation value, so about ¥169,200 of free goods each year.</p>
+      <p class="small" style="color:#fff; margin-top:12px" data-lang="ja">返礼品は寄付額の30%が上限のため、年間で約169,200円分の品物を受け取れます。</p>
+    </div>
+
+    <p>
+      <a href="https://furusato-nouzei.event.rakuten.co.jp/mypage/deductions/" target="_blank" rel="noopener"><span data-lang="en">Rakuten donation limit calculator</span><span data-lang="ja">楽天の控除上限額シミュレーター</span></a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://event.rakuten.co.jp/furusato/" target="_blank" rel="noopener"><span data-lang="en">Rakuten Furusato Nozei site</span><span data-lang="ja">楽天ふるさと納税</span></a>
+    </p>
+
+    <h4 data-lang="en">Things I would actually use</h4>
+    <h4 data-lang="ja">私なら選ぶもの</h4>
+
+    <div class="price"><a href="https://item.rakuten.co.jp/f402052-iizuka/10002163/" target="_blank" rel="noopener"><span data-lang="en">Ginza Yamagataya suit</span><span data-lang="ja">銀座山形屋 オーダースーツ</span></a><span class="amt">¥610,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f402036-kurume/qd027/" target="_blank" rel="noopener"><span data-lang="en">Sofa, 160cm</span><span data-lang="ja">ソファ 160cm</span></a><span class="amt">¥572,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f042081-kakuda/aa1040/" target="_blank" rel="noopener"><span data-lang="en">IRIS Ohyama 8kg front washing machine</span><span data-lang="ja">アイリスオーヤマ ドラム式洗濯機 8kg</span></a><span class="amt">¥421,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f402125-okawa/br347ka-r/" target="_blank" rel="noopener"><span data-lang="en">Coffee table, 120cm</span><span data-lang="ja">センターテーブル 120cm</span></a><span class="amt">¥307,500</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f401005-kitakyushu/250-3747/" target="_blank" rel="noopener"><span data-lang="en">Dyson Pencilvac vacuum</span><span data-lang="ja">ダイソン Pencilvac 掃除機</span></a><span class="amt">¥296,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f202096-ina/260-20/" target="_blank" rel="noopener"><span data-lang="en">Kokuyo Chair Wizard</span><span data-lang="ja">コクヨ チェア ウィザード</span></a><span class="amt">¥270,000</span></div>
+    <div class="price"><a href="https://item.rakuten.co.jp/f232238-obu/t084-r/" target="_blank" rel="noopener"><span data-lang="en">Airweave futon mattress</span><span data-lang="ja">エアウィーヴ 敷き布団マットレス</span></a><span class="amt">¥226,000</span></div>
+    <div class="price"><a href="https://www.satofull.jp/products/detail.php?product_id=1173564" target="_blank" rel="noopener"><span data-lang="en">Chiyoda ward PayPay gift voucher</span><span data-lang="ja">千代田区 PayPay商品券</span></a><span class="amt">¥5,000〜¥500,000</span></div>
+
+    <p class="tiny" style="margin-top:14px" data-lang="en">Figures are donation amounts, not the retail price of the gift. The Chiyoda voucher works at around <a href="https://paypay.ne.jp/guide/gift-vouchers-local/?local-name=tokyo-chiyoda-city" target="_blank" rel="noopener">1,000 participating stores</a>.</p>
+    <p class="tiny" style="margin-top:14px" data-lang="ja">金額は寄付額であり、返礼品の販売価格ではありません。千代田区の商品券は<a href="https://paypay.ne.jp/guide/gift-vouchers-local/?local-name=tokyo-chiyoda-city" target="_blank" rel="noopener">約1,000の加盟店</a>で使えます。</p>
+  </div>
+</section>
+
+<!-- ============================ LEVER 06: PERMANENT RESIDENCE ============================ -->
+<section id="pr">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Lever 06 &middot; Permanent residence</p>
+    <p class="eyebrow" data-lang="ja">方法6 &middot; 永住権</p>
+
+    <h2 data-lang="en">The step that unlocks everything else</h2>
+    <h2 data-lang="ja">他のすべてを後押しする一手</h2>
+
+    <p data-lang="en">Permanent residence is not a tax lever by itself. You can buy property without it, but it improves your financing and removes a lot of risk elsewhere.</p>
+    <p data-lang="ja">永住権そのものは節税策ではありません。永住権がなくても物件は購入できますが、融資条件が良くなり、生活面のリスクも大きく減ります。</p>
+
+    <div class="grid two">
+      <div class="card red">
+        <h3 data-lang="en">100% property loans</h3>
+        <h3 data-lang="ja">物件価格の100%融資</h3>
+        <p class="small" data-lang="en">Banks lend the full purchase price, so you need very little cash up front.</p>
+        <p class="small" data-lang="ja">銀行が全額を融資するため、初期費用がほとんどかかりません。</p>
+      </div>
+      <div class="card">
+        <h3 data-lang="en">A wider range of banks</h3>
+        <h3 data-lang="ja">選べる銀行が増える</h3>
+        <p class="small" data-lang="en">More lenders will consider you, which means better rates and terms.</p>
+        <p class="small" data-lang="ja">対応する銀行が増え、金利や条件が良くなります。</p>
+      </div>
+      <div class="card">
+        <h3 data-lang="en">Security if you lose your job</h3>
+        <h3 data-lang="ja">失職しても在留できる</h3>
+        <p class="small" data-lang="en">You can remain in Japan. Your status no longer depends on your employer.</p>
+        <p class="small" data-lang="ja">在留資格が勤務先に左右されなくなります。</p>
+      </div>
+      <div class="card">
+        <h3 data-lang="en">Check your points first</h3>
+        <h3 data-lang="ja">まず点数を確認する</h3>
+        <p class="small" data-lang="en">A higher score can shorten the residence period you need before applying.</p>
+        <p class="small" data-lang="ja">点数が高いほど、申請に必要な在留期間が短くなります。</p>
+      </div>
+    </div>
+
+    <p><a href="https://japanprcalculator.com/" target="_blank" rel="noopener"><span data-lang="en">Work out your points score</span><span data-lang="ja">永住権の点数を計算する</span></a></p>
+
+    <div class="partner">
+      <p class="role" data-lang="en">The lawyer who handled my case</p>
+      <p class="role" data-lang="ja">私の申請を担当した行政書士</p>
+
+      <h3 data-lang="en">Yuki Hirose, immigration lawyer</h3>
+      <h3 data-lang="ja">広瀬 由紀 行政書士</h3>
+
+      <p class="small" data-lang="en">She speaks business English, gives a clear checklist of requirements, and keeps it simple for people who do not read Japanese. She even sent a paid return envelope for the signed documents. She handles other visa types too.</p>
+      <p class="small" data-lang="ja">ビジネス英語で対応し、必要書類を分かりやすくまとめてくれます。日本語が読めない人にも配慮があり、署名書類の返送用に料金支払済みの封筒まで送ってくれました。他の在留資格も扱っています。</p>
+
+      <p class="small" data-lang="en">Cost was around ¥160,000 on a 2025 quote. My application took about 18 months to approve.</p>
+      <p class="small" data-lang="ja">費用は2025年の見積もりで約160,000円。私の申請は承認まで約18か月かかりました。</p>
+
+      <p class="small" data-lang="en"><b>Mention my name for a slight discount.</b></p>
+      <p class="small" data-lang="ja"><b>私の名前を伝えると少し割引があります。</b></p>
+
+      <a class="btn" href="https://www.linkedin.com/in/hiroseyuki0528/" target="_blank" rel="noopener"><span data-lang="en">Contact Yuki on LinkedIn</span><span data-lang="ja">LinkedInで連絡する</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THE PLAN ============================ -->
+<section id="plan" class="tint">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Your plan</p>
+    <p class="eyebrow" data-lang="ja">まとめ</p>
+
+    <h2 data-lang="en">Putting the six levers together</h2>
+    <h2 data-lang="ja">6つの方法を組み合わせる</h2>
+
+    <div class="row"><div class="tag" style="background:var(--navy)">01</div><div>
+      <div data-lang="en"><b>Property investment</b><span class="desc">About ¥900,000 less taxable income per property</span><em>Any time. Start with the financing question</em></div>
+      <div data-lang="ja"><b>不動産投資</b><span class="desc">1物件あたり課税所得を約900,000円圧縮</span><em>いつでも可能。まず融資条件の確認から</em></div>
+    </div></div>
+
+    <div class="row"><div class="tag" style="background:var(--agave)">02</div><div>
+      <div data-lang="en"><b>Angel fund investment</b><span class="desc">Up to ¥8,000,000 deduction</span><em>Fund entry windows during the year</em></div>
+      <div data-lang="ja"><b>エンジェル投資</b><span class="desc">最大8,000,000円の控除</span><em>年内の募集時期に合わせて</em></div>
+    </div></div>
+
+    <div class="row"><div class="tag" style="background:var(--monday)">03</div><div>
+      <div data-lang="en"><b>Dependent deductions</b><span class="desc">¥380,000 to ¥480,000 per person</span><em>Send money early. Claim at year end</em></div>
+      <div data-lang="ja"><b>扶養控除</b><span class="desc">一人あたり380,000〜480,000円</span><em>早めに送金し、年末調整で申請</em></div>
+    </div></div>
+
+    <div class="row"><div class="tag" style="background:var(--midagave)">04</div><div>
+      <div data-lang="en"><b>NISA</b><span class="desc">No tax on gains, up to ¥18,000,000 invested</span><em>¥3.6M each year. Set it and forget it</em></div>
+      <div data-lang="ja"><b>NISA</b><span class="desc">1,800万円まで運用益が非課税</span><em>年360万円。設定したら放置</em></div>
+    </div></div>
+
+    <div class="row"><div class="tag light" style="background:var(--ocean)">05</div><div>
+      <div data-lang="en"><b>Furusato nozei</b><span class="desc">About ¥169,200 of goods on a ¥20M salary</span><em>Before 31 December each year</em></div>
+      <div data-lang="ja"><b>ふるさと納税</b><span class="desc">年収2,000万円で約169,200円分の返礼品</span><em>毎年12月31日まで</em></div>
+    </div></div>
+
+    <div class="row"><div class="tag" style="background:var(--red)">06</div><div>
+      <div data-lang="en"><b>Permanent residence</b><span class="desc">100% loans and more lenders</span><em>Apply as early as you qualify</em></div>
+      <div data-lang="ja"><b>永住権</b><span class="desc">100%融資と選べる銀行の増加</span><em>要件を満たしたら早めに申請</em></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================ CONCLUSION ============================ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="eyebrow" data-lang="en">Conclusion</p>
+    <p class="eyebrow" data-lang="ja">おわりに</p>
+
+    <h2 data-lang="en">Tell me what helped</h2>
+    <h2 data-lang="ja">感想を聞かせてください</h2>
+
+    <p data-lang="en">If you read this guide to the end, please drop me a note with what you found useful. That feedback is what improves the next version.</p>
+    <p data-lang="ja">最後まで読んでいただけたら、役に立った点をぜひ教えてください。次の版の改善に使わせていただきます。</p>
+
+    <div class="card red"><p><b>Steven Li</b></p></div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
 <footer>
   <div class="wrap">
-    <span lang="en">Robert Half, Tokyo. Last updated July 2026. Your checklist marks are kept on this page only and clear when you close it.</span>
-    <span lang="ja">ロバート・ハーフ 東京オフィス。最終更新：2026年7月。チェックした内容はこのページ内だけに保存され、閉じると消えます。</span>
+    <!-- LAST UPDATED (2 of 2) -->
+    <p data-lang="en"><b>Steven Li</b> &middot; Building wealth in Japan &middot; Last updated August 2026</p>
+    <p data-lang="ja"><b>Steven Li</b> &middot; 日本での資産形成 &middot; 最終更新 2026年8月</p>
+
+    <p data-lang="en">This is not financial advice and does not take into account your personal circumstances. Figures are estimates for illustration and tax rules change. Please check with your accountant.</p>
+    <p data-lang="ja">本資料は投資や税務の助言ではなく、個々の状況を考慮したものではありません。金額は説明のための概算であり、税制は変わります。実行の前に必ず税理士にご確認ください。</p>
   </div>
 </footer>
 
-<div class="cta">
-  <div class="cta-in">
-    <a href="https://line.me/ti/p/VFbxzpEPH-"><span lang="en">Add me on LINE to get started</span><span lang="ja">LINEで相談をはじめる</span></a>
-    <small><span lang="en">Or email steven.li@roberthalf.jp</span><span lang="ja">またはメールでご連絡ください steven.li@roberthalf.jp</span></small>
-  </div>
-</div>
-
 <script>
-(function(){
-  var lang = 'en';
-  var TITLES = {
-    en: '4 step checklist to changing jobs in Japan | Steven Li, Robert Half',
-    ja: 'ストレスなく転職するための4ステップ チェックリスト | スティーブン・リー'
+/* ===================================================================
+   LANGUAGE SWITCH AND CALCULATOR
+   You should not need to edit this. To change the tax bands, edit the
+   buttons in the HTML above and their data-rate values.
+   =================================================================== */
+(function () {
+  var langButtons = document.querySelectorAll('.langswitch button');
+  var bandButtons = document.querySelectorAll('.bands button');
+  var targets = document.querySelectorAll('[data-deduction]');
+  var pill = document.getElementById('rate-pill');
+
+  var PILL_TEXT = {
+    en: function (p) { return 'You save ' + p + '% on every deduction'; },
+    ja: function (p) { return '控除額の' + p + '%が戻ります'; }
   };
 
-  /* ---- checklists ---- */
-  var groups = {};
-  document.querySelectorAll('[data-group]').forEach(function(g){
-    var key = g.getAttribute('data-group');
-    var items = Array.prototype.slice.call(g.querySelectorAll('.check'));
-    groups[key] = { items: items, total: items.length };
-    items.forEach(function(item){
-      function toggle(){
-        var on = item.classList.toggle('done');
-        item.setAttribute('aria-checked', on ? 'true' : 'false');
-        updateCounter(key);
-      }
-      item.addEventListener('click', toggle);
-      item.addEventListener('keydown', function(e){
-        if(e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); }
+  var lang = 'en';
+  var rate = 0.50;
+
+  function yen(n) {
+    return '¥' + (Math.round(n / 1000) * 1000).toLocaleString('en-US');
+  }
+
+  function render() {
+    document.body.className = 'lang-' + lang;
+    document.documentElement.setAttribute('lang', lang);
+    targets.forEach(function (el) {
+      el.textContent = yen(parseFloat(el.getAttribute('data-deduction')) * rate);
+    });
+    pill.textContent = PILL_TEXT[lang](Math.round(rate * 100));
+  }
+
+  langButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      lang = btn.getAttribute('data-setlang');
+      langButtons.forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
       });
+      render();
     });
   });
 
-  function updateCounter(key){
-    var g = groups[key];
-    var el = document.querySelector('[data-counter="' + key + '"]');
-    if(!g || !el) return;
-    var done = g.items.filter(function(i){ return i.classList.contains('done'); }).length;
-    if(lang === 'ja'){
-      el.textContent = g.total + '件中 ' + done + '件' + (key === 'docs' ? ' 準備完了' : ' 完了');
-    } else {
-      el.textContent = done + ' of ' + g.total + (key === 'docs' ? ' ready' : ' done');
-    }
-    el.style.color = (done === g.total) ? '#0B6E76' : '#CC0033';
-  }
-
-  /* ---- language toggle ---- */
-  var btn = document.getElementById('langbtn');
-  var labels = btn.querySelectorAll('span');
-
-  function setLang(next){
-    lang = next;
-    document.body.classList.toggle('ja', lang === 'ja');
-    document.documentElement.lang = lang;
-    document.title = TITLES[lang];
-    labels.forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-l') === lang); });
-    Object.keys(groups).forEach(updateCounter);
-  }
-
-  btn.addEventListener('click', function(){ setLang(lang === 'en' ? 'ja' : 'en'); });
-
-  /* Open in Japanese for Japanese browsers, or with ?lang=ja */
-  var param = new URLSearchParams(location.search).get('lang');
-  var prefersJa = (navigator.language || '').toLowerCase().indexOf('ja') === 0;
-  setLang(param === 'ja' || (param !== 'en' && prefersJa) ? 'ja' : 'en');
-
-  /* ---- step nav highlight ---- */
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var targets = chips.map(function(c){ return document.querySelector(c.getAttribute('href')); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var idx = targets.indexOf(e.target);
-      chips.forEach(function(c,i){ c.classList.toggle('on', i === idx); });
+  bandButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      rate = parseFloat(btn.getAttribute('data-rate'));
+      bandButtons.forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      render();
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  targets.forEach(function(t){ if(t) io.observe(t); });
+  });
+
+  /* Start in Japanese if the visitor's device is set to Japanese. */
+  if ((navigator.language || '').toLowerCase().indexOf('ja') === 0) {
+    lang = 'ja';
+    langButtons.forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-setlang') === 'ja' ? 'true' : 'false');
+    });
+  }
+
+  render();
 })();
 </script>
 
