@@ -117,7 +117,11 @@ section.dark h4{color:var(--ocean)}
 /* ===================== STICKY NAV + LANGUAGE SWITCH ===================== */
 nav{
   position:sticky; top:0; z-index:50; background:var(--white);
-  border-bottom:1px solid var(--concrete); display:flex; align-items:center;
+  border-bottom:1px solid var(--concrete);
+}
+.navinner{
+  max-width:760px; margin:0 auto;
+  display:flex; align-items:center;
 }
 nav ul{
   flex:1 1 auto; min-width:0;
@@ -131,6 +135,10 @@ nav ul a{
   background:var(--concrete); padding:7px 13px; border-radius:99px;
 }
 nav ul a:hover{background:var(--sand); text-decoration:none}
+@media(min-width:800px){
+  nav ul{gap:6px}
+  nav ul a{padding:7px 11px}
+}
 .langswitch{
   flex:0 0 auto; display:flex; gap:4px; align-items:center;
   padding:10px var(--pad) 10px 10px; background:var(--white);
@@ -292,6 +300,7 @@ footer a{color:var(--ocean)}
 
 <!-- ============================ NAV + LANGUAGE SWITCH ============================ -->
 <nav>
+  <div class="navinner">
   <ul>
     <li><a href="#idea"><span data-lang="en">The idea</span><span data-lang="ja">考え方</span></a></li>
     <li><a href="#property"><span data-lang="en">Property</span><span data-lang="ja">不動産</span></a></li>
@@ -305,6 +314,7 @@ footer a{color:var(--ocean)}
   <div class="langswitch" role="group" aria-label="Language / 言語">
     <button type="button" data-setlang="en" aria-pressed="true">EN</button>
     <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+  </div>
   </div>
 </nav>
 
